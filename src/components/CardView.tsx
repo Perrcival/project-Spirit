@@ -3,9 +3,10 @@ import type { Card } from '../types/cardSchema';
 
 interface CardViewProps {
     card: Card;
+    hideImage?: boolean;
 }
 
-export const CardView: React.FC<CardViewProps> = ({ card }) => {
+export const CardView: React.FC<CardViewProps> = ({ card, hideImage = false }) => {
     // สไตล์สีการ์ดตามสีหลัก
     const getColorStyle = (colors: string[]) => {
         const primary = colors[0]?.toLowerCase() || 'red';
@@ -87,7 +88,7 @@ export const CardView: React.FC<CardViewProps> = ({ card }) => {
             </div>
 
             {/* รูปภาพการ์ด */}
-            {card.imageUrl && (
+            {!hideImage && card.imageUrl && (
                 <img
                     src={card.imageUrl}
                     alt={card.name}

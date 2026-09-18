@@ -74,5 +74,30 @@ export const mockCards: Card[] = [
             '[LV2] Your Red Spirits gain +1000 BP.'
         ],
         imageUrl: 'https://placehold.co/300x420/7f1d1d/ffffff?text=Red+Volcano'
+    },
+
+    {
+        id: '26RSD01-001',
+        name: 'Mushakko',
+        type: 'Spirit',
+        colors: ['Red'],
+        cost: 3,
+        reductions: [
+            { color: 'Red', amount: 1 }
+        ],
+        symbols: [
+            { color: 'Red', type: 'Normal' } // มี EX Symbol เมื่อตก Trash
+        ],
+        hasLegacy: false, // มีความสามารถ Legacy
+        families: ['Windfang'],
+        rarity: ['Common'],
+        levels: [
+            { level: 1, coreCost: 1, bp: 2000 },
+            { level: 2, coreCost: 2, bp: 30000 },
+        ],
+        effects: [
+            '[LV2] During Attack : At the end of battle, if your Hand is five or less, draw a card.'
+        ],
+        imageUrl: '/cards/26RSD01-001.webp' // รูปจำลองชั่วคราว
     }
 ];
