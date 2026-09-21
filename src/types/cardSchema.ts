@@ -37,7 +37,6 @@ export interface BaseCard {
     hasLegacy?: boolean;
     rarity: Rarity[];
     effects: string[];
-    flavorText?: string;
     imageUrl?: string;
 }
 
@@ -51,6 +50,7 @@ export interface SpiritCard extends BaseCard {
 // Nexus Card Schema
 export interface NexusCard extends BaseCard {
     type: 'Nexus';
+    families: string[];
     levels: CardLevel[];
 }
 
@@ -58,8 +58,8 @@ export interface NexusCard extends BaseCard {
 export interface MagicCard extends BaseCard {
     type: 'Magic';
     soulMagicConditionColor?: Color;
-    mainEffect?: string;
-    flashEffect?: string;
+    isMain?: boolean;
+    isFlash?: boolean;
 }
 
 // Combine all card type to single name for simpler calls
