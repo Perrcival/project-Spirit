@@ -1,51 +1,62 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { mockCards } from './data/mockCards';
-import { CardModal } from './components/CardModal';
-import type { Card } from './types/cardSchema';
+import { CardView } from './components/CardView';
+import { CardCreator } from './components/CardCreator';
 
 function App() {
-  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
+  // State for switching between Gallery and Creator (default is gallery)
+  const [viewMode, setViewMode] = useState<'gallery' | 'creator'>('gallery');
 
   return (
-    <div style={{ padding: '24px', backgroundColor: '#0f172a', minHeight: '100vh', color: '#fff', fontFamily: 'sans-serif' }}>
-      <header style={{ marginBottom: '24px', textAlign: 'center' }}>
-        <h1 style={{ margin: 0, color: '#f59e0b' }}>Battle Spirits Web Simulator 🎴</h1>
-        <p style={{ color: '#94a3b8' }}>Standard Format (26RSD01 onwards) - Card Gallery</p>
+    <div className="min-h-screen bg-slate-900 font-sans text-slate-200">
+
+      {/* Navigation Bar / Header */}
+      <header className="bg-slate-950 border-b border-slate-800 p-4 sticky top-0 z-50 shadow-md">
+        <div className="max-w-7xl mx-auto flex justify-between items-center flex-wrap gap-4">
+
+          <div>
+            <h1 className="text-xl md:text-2xl font-bold text-amber-400 m-0">Battle Spirits Web Simulator</h1>
+            <p className="text-slate-400 text-sm m-0">Standard Format (26RSD01 onwards)</p>
+          </div>
+
+          {/* Toggle UI */}
+          <div className="flex bg-slate-800 p-1 rounded-lg border border-slate-700">
+            <button
+              onClick={() => setViewMode('gallery')}
+              className={`px-4 py-2 rounded-md text-sm font-semibold transition cursor-pointer ${viewMode === 'gallery' ? 'bg-cyan-600 text-white shadow' : 'text-slate-400 hover:text-white'
+                }`}
+            >
+              Card Gallery
+            </button>
+            <button
+              onClick={() => setViewMode('creator')}
+              className={`px-4 py-2 rounded-md text-sm font-semibold transition cursor-pointer ${viewMode === 'creator' ? 'bg-emerald-600 text-white shadow' : 'text-slate-400 hover:text-white'
+                }`}
+            >
+              Card Creator
+            </button>
+          </div>
+
+        </div>
       </header>
 
-      <div style={{ display: 'flex', gap: '20px', flexWrap: 'wrap', justifyContent: 'center' }}>
-        {mockCards.map((card) => (
-          <div 
-            key={card.id} 
-            onClick={() => setSelectedCard(card)}
-            style={{ 
-              cursor: 'pointer', 
-              transition: 'transform 0.2s', 
-              borderRadius: '8px', 
-              overflow: 'hidden',
-              boxShadow: '0 4px 6px -1px rgba(0, 0, 0, 0.5)'
-            }}
-            onMouseOver={(e) => e.currentTarget.style.transform = 'scale(1.05)'}
-            onMouseOut={(e) => e.currentTarget.style.transform = 'scale(1)'}
-          >
-            {card.imageUrl ? (
-              <img 
-                src={card.imageUrl} 
-                alt={card.name} 
-                style={{ width: '200px', height: '280px', objectFit: 'cover', display: 'block' }} 
-              />
-            ) : (
-              <div style={{ width: '200px', height: '280px', backgroundColor: '#334155', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-                <span style={{ padding: '8px', textAlign: 'center' }}>{card.name}</span>
-              </div>
-            )}
+      {/* Main Content Area */}
+      <main>
+        {viewMode === 'creator' ? (
+          // Card Creator Mode
+          <CardCreator />
+        ) : (
+          // Card Gallery Mode
+          <div className="p-8">
+            <div className="flex gap-6 flex-wrap justify-center">
+              {mockCards.map((card) => (
+                <CardView key={card.id} card={card} />
+              ))}
+            </div>
           </div>
-        ))}
-      </div>
+        )}
+      </main>
 
-      {selectedCard && (
-        <CardModal card={selectedCard} onClose={() => setSelectedCard(null)} />
-      )}
     </div>
   );
 }
