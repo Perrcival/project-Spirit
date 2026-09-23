@@ -293,6 +293,7 @@ export const mockCards: Card[] = [
         symbols: [
             { color: 'Red', type: 'EX' }
         ],
+        families: ['Windfang'],
         rarity: ['Common'],
         isMain: true,
         isFlash: true,
@@ -313,6 +314,7 @@ export const mockCards: Card[] = [
             { color: 'Red', amount: 2 }
         ],
         symbols: [],
+        families: ['Windfang'],
         hasLegacy: true,
         rarity: ['Common'],
         isMain: true,
@@ -337,7 +339,7 @@ export const mockCards: Card[] = [
         symbols: [
             { color: 'Red', type: 'EX' }
         ],
-        hasLegacy: true,
+        families: ['Windfang'],
         soulMagicConditionColor: 'Red',
         rarity: ['Common'],
         isMain: false,

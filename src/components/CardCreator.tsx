@@ -12,19 +12,45 @@ export const CardCreator = () => {
         cost: 0,
         reductions: [],
         symbols: [{ color: 'Red', type: 'Normal' }],
-        hasLegacy: false,
+        families: [],
         rarity: ['Common'],
+        hasLegacy: false,
         effects: ['[LV1-LV2] Example Effect'],
         imageUrl: '',
-        families: [],
         levels: [{ level: 1, coreCost: 1, bp: 1000 }]
     } as Card);
 
     // 2. handle change function
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
         const { name, value } = e.target;
+
+        // when select another card type, reset default values of that type
+        if (name === 'type') {
+            let defaultOverrides = {};
+            if (value === 'Spirit') {
+                defaultOverrides = { families: [], levels: [{ level: 1, coreCost: 1, bp: 1000 }] };
+            } else if (value === 'Nexus') {
+                defaultOverrides = { families: [], levels: [{ level: 1, coreCost: 0 }] };
+            } else if (value === 'Magic') {
+                defaultOverrides = { mainEffect: '', flashEffect: '', soulMagicConditionColor: undefined };
+            }
+            setCardData({ ...cardData, type: value as any, ...defaultOverrides } as Card);
+            return;
+        }
         // update data in edited field
         setCardData({ ...cardData, [name]: name === 'cost' ? Number(value) : value } as Card);
+    };
+
+    //translate comma separated string into array and update state (for families attribute)
+    const handleFamiliesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        const arr = e.target.value.split(',').map(s => s.trim()).filter(s => s !== '');
+        setCardData({ ...cardData, families: arr } as any);
+    };
+
+    //translate new line separated string into array and update state (for effects attribute)
+    const handleEffectsChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
+        const arr = e.target.value.split('\n').filter(s => s.trim() !== '');
+        setCardData({ ...cardData, effects: arr } as Card);
     };
 
     // 3. transform data back to JSON format
@@ -38,6 +64,7 @@ export const CardCreator = () => {
                 <h2 className="text-2xl font-bold mb-6 text-amber-400">Card Creator</h2>
 
                 <div className="space-y-4">
+                    {/* Basic info section (Card ID, Name, Type, Cost, Image URL) */}
                     <div className="grid grid-cols-2 gap-4">
                         <div>
                             <label className="block text-sm font-semibold mb-1 text-slate-400">Card ID</label>
@@ -52,7 +79,8 @@ export const CardCreator = () => {
                     <div className="grid grid-cols-3 gap-4">
                         <div>
                             <label className="block text-sm font-semibold mb-1 text-slate-400">Type</label>
-                            <select name="type" value={cardData.type} onChange={handleChange} className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white">
+                            <select name="type" value={cardData.type} onChange={handleChange}
+                                className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white">
                                 <option value="Spirit">Spirit</option>
                                 <option value="Nexus">Nexus</option>
                                 <option value="Magic">Magic</option>
@@ -60,8 +88,66 @@ export const CardCreator = () => {
                         </div>
                         <div>
                             <label className="block text-sm font-semibold mb-1 text-slate-400">Cost</label>
-                            <input type="number" name="cost" value={cardData.cost} onChange={handleChange} className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white" />
+                            <input type="number" name="cost" value={cardData.cost} onChange={handleChange}
+                                className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white"
+                            />
                         </div>
+                    </div>
+
+                    {/* Dynamic Attributes based on card type */}
+                    <div className="p-4 bg-slate-950 rounded-lg border border-slate-700 space-y-4 my-4">
+                        <h3 className="font-bold text-cyan-400 mb-2">{cardData.type} Attribute</h3>
+
+                        {/* Spirit Card */}
+                        {cardData.type === 'Spirit' && (
+                            <div className='space-y-4'>
+                                {/*Families field*/}
+                                <div>
+                                    <label className="block text-sm font-semibold mb-1 text-slate-400">Families</label>
+                                    <input value={(cardData as any).families?.join(',') || ''} onChange={handleFamiliesChange}
+                                        placeholder="use comma (,) to separate different families"
+                                        className="w=full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white" />
+                                </div>
+                            </div>
+                        )}
+
+                        {/* Magic Card */}
+                        {cardData.type === 'Magic' && (
+                            <div className='space-y-4'>
+                                {/*Soul Magic Color(optional)*/}
+                                <div>
+                                    <label className='block text-sm font-semibold mb-1 text-slate-400'>Soul Magic Color(optional)</label>
+                                    <select name="soulMagicConditionColor" value={(cardData as any).soulMagicConditionColor || ''} onChange={handleChange}
+                                        className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white">
+                                        <option value="">None</option>
+                                        <option value="Red">Red</option>
+                                        <option value="Purple">Purple</option>
+                                        <option value="Green">Green</option>
+                                        <option value="White">White</option>
+                                        <option value="Yellow">Yellow</option>
+                                        <option value="Blue">Blue</option>
+                                    </select>
+                                </div>
+
+                                {/*Main Effect*/}
+                                <div>
+                                    <label className='block text-sm font-semibold mb-1 text-slate-400'>Main Effect</label>
+                                    <input name='mainEffect' value={(cardData as any).mainEffect || ''} onChange={handleChange}
+                                        placeholder='e.g. [LV1-2] effect'
+                                        className='w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white' />
+                                </div>
+
+                                {/*Flash Effect*/}
+                                <div>
+                                    <label className='block text-sm font-semibold mb-1 text-slate-400'>Flash Effect</label>
+                                    <input name='flashEffect' value={(cardData as any).flashEffect || ''} onChange={handleChange}
+                                        placeholder='e.g. [Flash] effect'
+                                        className='w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white' />
+                                </div>
+                            </div>
+                        )}
+
+                        {/*Nexus Card}*/}
                     </div>
 
                     <div>

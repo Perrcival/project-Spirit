@@ -34,6 +34,7 @@ export interface BaseCard {
     cost: number;
     reductions: Reduction[];
     symbols: CardSymbol[];
+    families: string[];
     hasLegacy?: boolean;
     rarity: Rarity[];
     effects: string[];
@@ -43,14 +44,12 @@ export interface BaseCard {
 // Spirit Card Schema
 export interface SpiritCard extends BaseCard {
     type: 'Spirit';
-    families: string[];
     levels: CardLevel[];
 }
 
 // Nexus Card Schema
 export interface NexusCard extends BaseCard {
     type: 'Nexus';
-    families: string[];
     levels: CardLevel[];
 }
 
