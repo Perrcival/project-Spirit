@@ -25,6 +25,19 @@ export interface Reduction {
     amount: number;
 }
 
+// Effect Schema
+export type EffectTagColor = 'Orange' | 'Black' | 'Blue' | 'Purple' | 'Red';
+
+export interface EffectTag {
+    color: EffectTagColor;
+    name: string;
+}
+
+export interface CardEffect {
+    levels?: number[]; // ex. [1, 2, 3] (? for magic card skip it)
+    tags: EffectTag[];
+    description: string;
+}
 // Base Card Schema (for all cards)
 export interface BaseCard {
     id: string;
@@ -37,7 +50,7 @@ export interface BaseCard {
     families: string[];
     hasLegacy?: boolean;
     rarity: Rarity[];
-    effects: string[];
+    effects: (string | CardEffect)[];
     imageUrl?: string;
 }
 

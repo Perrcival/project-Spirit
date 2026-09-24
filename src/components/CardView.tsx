@@ -131,9 +131,47 @@ export const CardView: React.FC<CardViewProps> = ({ card, hideImage = false }) =
 
             {/* เอฟเฟกต์ของการ์ด */}
             <div style={{ backgroundColor: '#fff', padding: '8px', borderRadius: '6px', fontSize: '11px', flex: 1, minHeight: '60px', overflowY: 'auto' }}>
-                {card.effects.map((eff, i) => (
-                    <p key={i} style={{ margin: '0 0 4px 0', lineHeight: '1.3' }}>{eff}</p>
-                ))}
+                {card.effects.map((eff, i) => {
+                    if (typeof eff === 'string') {
+                        // old effect format
+                        return (
+                            <p key={i} style={{ margin: '0 0 4px 0', lineHeight: '1.3' }}>{eff}</p>
+                        )
+                    }
+
+                    // new effect format
+                    return (
+                        <div key={i} style={{ margin: '0 0 8px 0', lineHeight: '1.4' }}>
+                            {eff.levels && eff.levels.length > 0 && (
+                                <span style={{ fontWeight: 'bold', marginRight: '4px' }}>
+                                    [LV{eff.levels.join('-LV')}]
+                                </span>
+                            )}
+                            {eff.tags.map((tag, tIndex) => {
+                                const tagColors: Record<string, string> = {
+                                    Orange: '#fbbf24',
+                                    Black: '#4b5563',
+                                    Blue: '#3b82f6',
+                                    Purple: '#a855f7',
+                                    Red: '#ef4444'
+                                };
+                                return (
+                                    <span key={tIndex} style={{
+                                        backgroundColor: tagColors[tag.color] || '#64748b',
+                                        color: '#fff',
+                                        padding: '1px 4px',
+                                        borderRadius: '4px',
+                                        marginRight: '4px',
+                                        fontSize: '9px'
+                                    }}>
+                                        {tag.name}
+                                    </span>
+                                );
+                            })}
+                            <span>{eff.description}</span>
+                        </div>
+                    );
+                })}
             </div>
         </div>
     );
