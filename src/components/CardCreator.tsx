@@ -15,7 +15,7 @@ export const CardCreator = () => {
         families: [],
         rarity: ['Common'],
         hasLegacy: false,
-        effects: ['[LV1-LV2] Example Effect'],
+        effects: [],
         imageUrl: '',
         levels: [{ level: 1, coreCost: 1, bp: 1000 }]
     } as Card);
@@ -47,10 +47,64 @@ export const CardCreator = () => {
         setCardData({ ...cardData, families: arr } as any);
     };
 
-    //translate new line separated string into array and update state (for effects attribute)
-    const handleEffectsChange = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
-        const arr = e.target.value.split('\n').filter(s => s.trim() !== '');
-        setCardData({ ...cardData, effects: arr } as Card);
+    // --- Symbol handlers ---
+    const addSymbol = () => {
+        setCardData({ ...cardData, symbols: [...cardData.symbols, { color: 'Red', type: 'Normal', amount: 1 }] } as Card);
+    };
+
+    const updateSymbol = (index: number, field: string, value: any) => {
+        const newSymbols = [...cardData.symbols];
+        newSymbols[index] = { ...newSymbols[index], [field]: value };
+        setCardData({ ...cardData, symbols: newSymbols } as Card);
+    };
+
+    const removeSymbol = (index: number) => {
+        setCardData({ ...cardData, symbols: cardData.symbols.filter((_, i) => i !== index) } as Card)
+    };
+
+    // --- Effect Handlers
+    const addEffect = () => {
+        setCardData({ ...cardData, effects: [...cardData.effects, { levels: [1], tags: [], description: '' }] } as Card);
+    };
+
+    const updateEffect = (index: number, field: string, value: any) => {
+        const newEffects = [...cardData.effects];
+        if (typeof newEffects[index] !== 'string') {
+            newEffects[index] = { ...newEffects[index], [field]: value };
+        }
+        setCardData({ ...cardData, effects: newEffects } as Card);
+    };
+
+    const addTagToEffect = (effectIndex: number) => {
+        const newEffects = [...cardData.effects];
+        if (typeof newEffects[effectIndex] !== 'string') {
+            const eff = newEffects[effectIndex] as any;
+            eff.tags = [...(eff.tags || []), { color: 'Orange', name: 'New Tag' }];
+        }
+        setCardData({ ...cardData, effects: newEffects } as Card);
+    };
+
+    const updateTag = (effectIndex: number, tagIndex: number, field: string, value: any) => {
+        const newEffects = [...cardData.effects];
+        if (typeof newEffects[effectIndex] !== 'string') {
+            const eff = newEffects[effectIndex] as any;
+            eff.tags[tagIndex] = { ...eff.tags[tagIndex], [field]: value };
+        }
+        setCardData({ ...cardData, effects: newEffects } as Card);
+    };
+
+    const removeTag = (effectIndex: number, tagIndex: number) => {
+        const newEffects = [...cardData.effects];
+        if (typeof newEffects[effectIndex] !== 'string') {
+            const eff = newEffects[effectIndex] as any;
+            eff.tags = eff.tags.filter((_: any, i: number) => i !== tagIndex);
+        }
+        setCardData({ ...cardData, effects: newEffects } as Card);
+    };
+
+    const removeEffect = (index: number) => {
+        const newEffects = cardData.effects.filter((_, i) => i !== index);
+        setCardData({ ...cardData, effects: newEffects } as Card);
     };
 
     // 3. transform data back to JSON format
