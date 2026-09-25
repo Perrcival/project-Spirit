@@ -253,6 +253,7 @@ export const CardCreator = () => {
                     
                     ------- Third Section -------
                     - Symbols
+                    - Effects
                     - Image URL
                     
                     */}
@@ -289,6 +290,17 @@ export const CardCreator = () => {
                             </div>
                         ))}
                     </div>
+
+                    {/* Effects Section */}
+                    <div className='p-4 bg-slate-950 rounded-lg border border-slate-700 space-y-4 my-4'>
+                        <div className='flex justify-between items-center'>
+                            <h3 className='font-bold text-cyan-400'>Effects</h3>
+                            <button onClick={addEffect} className="px-3 py-1 bg-cyan-600 text-white text-xs rounded font-bold transition-colors">
+                                + Add Effects
+                            </button>
+                        </div>
+                    </div>
+
                     {/*Image URL*/}
                     <div>
                         <label className="block text-sm font-semibold mb-1 text-slate-400">Image URL</label>
