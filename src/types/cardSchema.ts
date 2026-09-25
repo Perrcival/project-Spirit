@@ -9,6 +9,7 @@ type Rarity = 'Common' | 'Rare' | 'Master Rare' | 'X-Rare' | 'PR';
 export interface CardSymbol {
     color: Color;
     type: SymbolType;
+    amount?: number;
 }
 
 // Level Schema
