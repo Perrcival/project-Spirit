@@ -146,6 +146,14 @@ export const CardCreator = () => {
                                 className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white"
                             />
                         </div>
+                        <div className="flex items-end pb-2">
+                            <label className="flex items-center space-x-2 text-sm text-slate-300 font-semibold cursor-pointer">
+                                <input type="checkbox" name="hasLegacy" checked={cardData.hasLegacy || false}
+                                    onChange={(e) => setCardData({ ...cardData, hasLegacy: e.target.checked } as Card)}
+                                    className="w-5 h-5 rounded border-slate-600 bg-slate-700 text-amber-500 focus:ring-amber-400" />
+                                <span className="tet-amber-400">Legacy</span>
+                            </label>
+                        </div>
                     </div>
 
                     {/* Dynamic Attributes based on card type */}
