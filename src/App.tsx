@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { mockCards } from './data/mockCards';
 import { CardView } from './components/CardView';
 import { CardCreator } from './components/CardCreator';
+import { CardModal } from './components/CardModal';
+import type { Card } from './types/cardSchema';
 
 function App() {
   // State for switching between Gallery and Creator (default is gallery)
   const [viewMode, setViewMode] = useState<'gallery' | 'creator'>('gallery');
+  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
 
   return (
     <div className="min-h-screen bg-slate-900 font-sans text-slate-200">
@@ -50,9 +53,30 @@ function App() {
           <div className="p-8">
             <div className="flex gap-6 flex-wrap justify-center">
               {mockCards.map((card) => (
-                <CardView key={card.id} card={card} />
+                <div 
+                    key={card.id} 
+                    className="cursor-pointer hover:scale-105 transition-transform duration-200"
+                    onClick={() => setSelectedCard(card)}
+                >
+                    {card.imageUrl ? (
+                        <img 
+                            src={card.imageUrl} 
+                            alt={card.name} 
+                            className="w-[200px] h-auto rounded-xl shadow-lg border-2 border-slate-700 hover:border-amber-400" 
+                        />
+                    ) : (
+                        <div className="w-[200px] h-[280px] bg-slate-800 rounded-xl shadow-lg border-2 border-slate-700 hover:border-amber-400 flex items-center justify-center text-center p-4">
+                            <span className="text-slate-400 font-bold">{card.name}</span>
+                        </div>
+                    )}
+                </div>
               ))}
             </div>
+
+            {/* Modal */}
+            {selectedCard && (
+                <CardModal card={selectedCard} onClose={() => setSelectedCard(null)} />
+            )}
           </div>
         )}
       </main>

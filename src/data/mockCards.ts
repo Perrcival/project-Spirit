@@ -412,7 +412,12 @@ export const mockCards: Card[] = [
             "Purple"
         ],
         cost: 2,
-        reductions: [],
+        reductions: [
+            {
+                color: "Purple",
+                amount: 1
+            }
+        ],
         symbols: [
             {
                 color: "Purple",
