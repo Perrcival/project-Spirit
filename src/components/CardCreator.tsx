@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 import { CardView } from './CardView';
+import { CardEffectsBuilder } from './CardEffectsBuilder';
 import type { Card } from '../types/cardSchema';
 
 export const CardCreator = () => {
-    // 1. initial data state
+    // 1. Initial data state
     const [cardData, setCardData] = useState<Card>({
         id: '26RSD01-000',
         name: 'New Card',
@@ -11,45 +12,60 @@ export const CardCreator = () => {
         colors: ['Red'],
         cost: 0,
         reductions: [],
-        symbols: [{ color: 'Red', type: 'Normal' }],
+        symbols: [{ color: 'Red', type: 'Normal', amount: 1 }],
         families: [],
         rarity: ['Common'],
         hasLegacy: false,
         effects: [],
         imageUrl: '',
-        levels: [{ level: 1, coreCost: 1, bp: 1000 }]
     } as Card);
 
-    // 2. handle change function
-    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
+    // 1.5 Local state for families input to prevent comma deletion issue
+    const [familiesInput, setFamiliesInput] = useState<string>(cardData.families?.join(', ') || '');
+
+    // 2. Handle input changes
+    const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
 
-        // when select another card type, reset default values of that type
+        // When switching card type, initialize type-specific default attributes (preserve families)
         if (name === 'type') {
-            let defaultOverrides = {};
+            let defaultOverrides: Record<string, any> = {};
             if (value === 'Spirit') {
-                defaultOverrides = { families: [], levels: [{ level: 1, coreCost: 1, bp: 1000 }] };
+                defaultOverrides = { levels: [{ level: 1, coreCost: 1, bp: 1000 }] };
             } else if (value === 'Nexus') {
-                defaultOverrides = { families: [], levels: [{ level: 1, coreCost: 0 }] };
+                defaultOverrides = { levels: [{ level: 1, coreCost: 0 }, { level: 2, coreCost: 1 }] };
             } else if (value === 'Magic') {
                 defaultOverrides = { mainEffect: '', flashEffect: '', soulMagicConditionColor: undefined };
             }
             setCardData({ ...cardData, type: value as any, ...defaultOverrides } as Card);
             return;
         }
-        // update data in edited field
-        setCardData({ ...cardData, [name]: name === 'cost' ? Number(value) : value } as Card);
+
+        // Update standard fields
+        const newCardData = { ...cardData, [name]: name === 'cost' ? Number(value) : value } as Card;
+
+        // Auto-update imageUrl when ID changes
+        if (name === 'id') {
+            const currentColor = (newCardData.colors && newCardData.colors.length > 0) ? newCardData.colors[0].toLowerCase() : 'red';
+            newCardData.imageUrl = `/cards/${currentColor}/${value}.webp`;
+        }
+
+        setCardData(newCardData);
     };
 
-    //translate comma separated string into array and update state (for families attribute)
+    // Translate comma separated string into array for families attribute (available for all card types)
     const handleFamiliesChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setFamiliesInput(e.target.value);
         const arr = e.target.value.split(',').map(s => s.trim()).filter(s => s !== '');
         setCardData({ ...cardData, families: arr } as any);
     };
 
     // --- Symbol handlers ---
     const addSymbol = () => {
-        setCardData({ ...cardData, symbols: [...cardData.symbols, { color: 'Red', type: 'Normal', amount: 1 }] } as Card);
+        setCardData({
+            ...cardData,
+            symbols: [...cardData.symbols, { color: 'Red', type: 'Normal', amount: 1 }]
+        } as Card);
     };
 
     const updateSymbol = (index: number, field: string, value: any) => {
@@ -59,98 +75,79 @@ export const CardCreator = () => {
     };
 
     const removeSymbol = (index: number) => {
-        setCardData({ ...cardData, symbols: cardData.symbols.filter((_, i) => i !== index) } as Card)
+        setCardData({
+            ...cardData,
+            symbols: cardData.symbols.filter((_, i) => i !== index)
+        } as Card);
     };
 
-    // --- Effect Handlers
-    const addEffect = () => {
-        setCardData({ ...cardData, effects: [...cardData.effects, { levels: [1], tags: [], description: '' }] } as Card);
-    };
-
-    const updateEffect = (index: number, field: string, value: any) => {
-        const newEffects = [...cardData.effects];
-        if (typeof newEffects[index] !== 'string') {
-            newEffects[index] = { ...newEffects[index], [field]: value };
-        }
-        setCardData({ ...cardData, effects: newEffects } as Card);
-    };
-
-    const addTagToEffect = (effectIndex: number) => {
-        const newEffects = [...cardData.effects];
-        if (typeof newEffects[effectIndex] !== 'string') {
-            const eff = newEffects[effectIndex] as any;
-            eff.tags = [...(eff.tags || []), { color: 'Orange', name: 'New Tag' }];
-        }
-        setCardData({ ...cardData, effects: newEffects } as Card);
-    };
-
-    const updateTag = (effectIndex: number, tagIndex: number, field: string, value: any) => {
-        const newEffects = [...cardData.effects];
-        if (typeof newEffects[effectIndex] !== 'string') {
-            const eff = newEffects[effectIndex] as any;
-            eff.tags[tagIndex] = { ...eff.tags[tagIndex], [field]: value };
-        }
-        setCardData({ ...cardData, effects: newEffects } as Card);
-    };
-
-    const removeTag = (effectIndex: number, tagIndex: number) => {
-        const newEffects = [...cardData.effects];
-        if (typeof newEffects[effectIndex] !== 'string') {
-            const eff = newEffects[effectIndex] as any;
-            eff.tags = eff.tags.filter((_: any, i: number) => i !== tagIndex);
-        }
-        setCardData({ ...cardData, effects: newEffects } as Card);
-    };
-
-    const removeEffect = (index: number) => {
-        const newEffects = cardData.effects.filter((_, i) => i !== index);
-        setCardData({ ...cardData, effects: newEffects } as Card);
-    };
-
-    // 3. transform data back to JSON format
-    const jsonCode = JSON.stringify(cardData, null, 2);
+    // 3. Transform data back to JS object format (remove quotes from keys)
+    const jsCode = JSON.stringify(cardData, null, 2).replace(/"([a-zA-Z0-9_]+)":/g, '$1:');
 
     return (
         <div className="flex flex-col lg:flex-row gap-8 p-6 bg-slate-900 min-h-screen text-slate-200 font-sans">
 
-            {/* Left side: form to fill in data */}
+            {/* Left side: Form to fill in data */}
             <div className="w-full lg:w-1/2 bg-slate-800 p-6 rounded-xl shadow-lg border border-slate-700">
                 <h2 className="text-2xl font-bold mb-6 text-amber-400">Card Creator</h2>
 
-
-                {/*
-                
-                ------- First Section -------
-                
-                - ID
-                - Name /
-                - Type /
-                - Cost /
-                - Colors X
-                - Legacy /
-                - Rarity X
-                - Family X
-
-
-                */}
                 <div className="space-y-4">
-                    {/* Basic info section (Card ID, Name, Type, Cost, Image URL) */}
+                    {/* Basic info section (Card ID, Name) */}
                     <div className="grid grid-cols-2 gap-4">
                         <div>
                             <label className="block text-sm font-semibold mb-1 text-slate-400">Card ID</label>
-                            <input name="id" value={cardData.id} onChange={handleChange} className="w-full p-2 bg-slate-700 rounded border border-slate-600 focus:border-amber-400 outline-none text-white" />
+                            <input
+                                name="id"
+                                value={cardData.id}
+                                onChange={handleChange}
+                                className="w-full p-2 bg-slate-700 rounded border border-slate-600 focus:border-amber-400 outline-none text-white"
+                            />
                         </div>
                         <div>
                             <label className="block text-sm font-semibold mb-1 text-slate-400">Name</label>
-                            <input name="name" value={cardData.name} onChange={handleChange} className="w-full p-2 bg-slate-700 rounded border border-slate-600 focus:border-amber-400 outline-none text-white" />
+                            <input
+                                name="name"
+                                value={cardData.name}
+                                onChange={handleChange}
+                                className="w-full p-2 bg-slate-700 rounded border border-slate-600 focus:border-amber-400 outline-none text-white"
+                            />
                         </div>
                     </div>
 
-                    <div className="grid grid-cols-3 gap-4">
+                    {/* Type, Cost, Legacy */}
+                    <div className="grid grid-cols-4 gap-4">
+                        <div>
+                            <label className="block text-sm font-semibold mb-1 text-slate-400">Color</label>
+                            <select
+                                name="colors"
+                                value={cardData.colors?.[0] || 'Red'}
+                                onChange={(e) => {
+                                    const newColor = e.target.value as any;
+                                    setCardData({
+                                        ...cardData,
+                                        colors: [newColor],
+                                        imageUrl: `/cards/${newColor.toLowerCase()}/${cardData.id}.webp`
+                                    } as Card);
+                                }}
+                                className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white cursor-pointer"
+                            >
+                                <option value="Red">Red</option>
+                                <option value="Purple">Purple</option>
+                                <option value="Green">Green</option>
+                                <option value="White">White</option>
+                                <option value="Yellow">Yellow</option>
+                                <option value="Blue">Blue</option>
+                                <option value="Colorless">Colorless</option>
+                            </select>
+                        </div>
                         <div>
                             <label className="block text-sm font-semibold mb-1 text-slate-400">Type</label>
-                            <select name="type" value={cardData.type} onChange={handleChange}
-                                className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white">
+                            <select
+                                name="type"
+                                value={cardData.type}
+                                onChange={handleChange}
+                                className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white cursor-pointer"
+                            >
                                 <option value="Spirit">Spirit</option>
                                 <option value="Nexus">Nexus</option>
                                 <option value="Magic">Magic</option>
@@ -158,168 +155,294 @@ export const CardCreator = () => {
                         </div>
                         <div>
                             <label className="block text-sm font-semibold mb-1 text-slate-400">Cost</label>
-                            <input type="number" name="cost" value={cardData.cost} onChange={handleChange}
+                            <input
+                                type="number"
+                                name="cost"
+                                min="0"
+                                value={cardData.cost}
+                                onChange={handleChange}
                                 className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white"
                             />
                         </div>
                         <div className="flex items-end pb-2">
                             <label className="flex items-center space-x-2 text-sm text-slate-300 font-semibold cursor-pointer">
-                                <input type="checkbox" name="hasLegacy" checked={cardData.hasLegacy || false}
+                                <input
+                                    type="checkbox"
+                                    name="hasLegacy"
+                                    checked={cardData.hasLegacy || false}
                                     onChange={(e) => setCardData({ ...cardData, hasLegacy: e.target.checked } as Card)}
-                                    className="w-5 h-5 rounded border-slate-600 bg-slate-700 text-amber-500 focus:ring-amber-400" />
-                                <span className="tet-amber-400">Legacy</span>
+                                    className="w-5 h-5 rounded border-slate-600 bg-slate-700 text-amber-500 focus:ring-amber-400"
+                                />
+                                <span className="text-amber-400">Legacy</span>
                             </label>
                         </div>
                     </div>
 
-
-                    {/*
-                    
-                    ------- Second Section ------- 
-                    
-                    - Specific Data for each card type
-                    - Spirit
-                        - LV1,LV2,LV3
-                        - True Release
-                        - BP
-                    - Magic
-                        - Soul Magic Condition Color
-                        - Main Effect
-                        - Flash Effect
-                    - Nexus
-                        - LV1,LV2,LV3
-                        - True Release
-                        
-                    
-                    */}
-                    {/* Dynamic Attributes based on card type */}
-                    <div className="p-4 bg-slate-950 rounded-lg border border-slate-700 space-y-4 my-4">
-                        <h3 className="font-bold text-cyan-400 mb-2">{cardData.type} Attribute</h3>
-
-                        {/* Spirit Card */}
-                        {cardData.type === 'Spirit' && (
-                            <div className='space-y-4'>
-                                {/*Families field*/}
-                                <div>
-                                    <label className="block text-sm font-semibold mb-1 text-slate-400">Families</label>
-                                    <input value={(cardData as any).families?.join(',') || ''} onChange={handleFamiliesChange}
-                                        placeholder="use comma (,) to separate different families"
-                                        className="w=full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white" />
-                                </div>
-                            </div>
-                        )}
-
-                        {/* Magic Card */}
-                        {cardData.type === 'Magic' && (
-                            <div className='space-y-4'>
-                                {/*Soul Magic Color(optional)*/}
-                                <div>
-                                    <label className='block text-sm font-semibold mb-1 text-slate-400'>Soul Magic Color(optional)</label>
-                                    <select name="soulMagicConditionColor" value={(cardData as any).soulMagicConditionColor || ''} onChange={handleChange}
-                                        className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white">
-                                        <option value="">None</option>
-                                        <option value="Red">Red</option>
-                                        <option value="Purple">Purple</option>
-                                        <option value="Green">Green</option>
-                                        <option value="White">White</option>
-                                        <option value="Yellow">Yellow</option>
-                                        <option value="Blue">Blue</option>
-                                    </select>
-                                </div>
-
-                                {/*Main Effect*/}
-                                <div>
-                                    <label className='block text-sm font-semibold mb-1 text-slate-400'>Main Effect</label>
-                                    <input name='mainEffect' value={(cardData as any).mainEffect || ''} onChange={handleChange}
-                                        placeholder='e.g. [LV1-2] effect'
-                                        className='w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white' />
-                                </div>
-
-                                {/*Flash Effect*/}
-                                <div>
-                                    <label className='block text-sm font-semibold mb-1 text-slate-400'>Flash Effect</label>
-                                    <input name='flashEffect' value={(cardData as any).flashEffect || ''} onChange={handleChange}
-                                        placeholder='e.g. [Flash] effect'
-                                        className='w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white' />
-                                </div>
-                            </div>
-                        )}
-
-                        {/*Nexus Card}*/}
+                    {/* Families field - Shared for ALL Card Types (Spirit, Nexus, Magic) */}
+                    <div>
+                        <label className="block text-sm font-semibold mb-1 text-slate-400">
+                            Families
+                        </label>
+                        <input
+                            value={familiesInput}
+                            onChange={handleFamiliesChange}
+                            placeholder="Use comma (,) to separate (e.g. Windfang, Red Cloud)"
+                            className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white focus:border-amber-400"
+                        />
                     </div>
 
+                    {/* Magic Card Specific Attributes (Main & Flash Effects) */}
+                    {cardData.type === 'Magic' && (
+                        <div className="p-4 bg-slate-950 rounded-lg border border-purple-800 space-y-4 my-4">
+                            <h3 className="font-bold text-purple-400 mb-2">Magic Card Effects</h3>
 
-                    {/*
-                    
-                    ------- Third Section -------
-                    - Symbols
-                    - Effects
-                    - Image URL
-                    
-                    */}
+                            {/* Soul Magic Color (Optional) */}
+                            <div>
+                                <label className="block text-sm font-semibold mb-1 text-slate-400">
+                                    Soul Magic Condition Color (Optional)
+                                </label>
+                                <select
+                                    name="soulMagicConditionColor"
+                                    value={(cardData as any).soulMagicConditionColor || ''}
+                                    onChange={handleChange}
+                                    className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white cursor-pointer"
+                                >
+                                    <option value="">None</option>
+                                    <option value="Red">Red</option>
+                                    <option value="Purple">Purple</option>
+                                    <option value="Green">Green</option>
+                                    <option value="White">White</option>
+                                    <option value="Yellow">Yellow</option>
+                                    <option value="Blue">Blue</option>
+                                </select>
+                            </div>
+
+                            {/* Main Effect */}
+                            <div>
+                                <div className="flex items-center gap-2 mb-1">
+                                    <span className="bg-blue-600 text-white text-xs px-2 py-0.5 rounded font-bold">Main</span>
+                                    <label className="text-sm font-semibold text-slate-300">Main Effect</label>
+                                </div>
+                                <textarea
+                                    name="mainEffect"
+                                    value={(cardData as any).mainEffect || ''}
+                                    onChange={handleChange}
+                                    placeholder="Enter Main Step effect..."
+                                    className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white h-20 resize-none focus:border-blue-400"
+                                />
+                            </div>
+
+                            {/* Flash Effect */}
+                            <div>
+                                <div className="flex items-center gap-2 mb-1">
+                                    <span className="bg-amber-600 text-white text-xs px-2 py-0.5 rounded font-bold">Flash</span>
+                                    <label className="text-sm font-semibold text-slate-300">Flash Effect</label>
+                                </div>
+                                <textarea
+                                    name="flashEffect"
+                                    value={(cardData as any).flashEffect || ''}
+                                    onChange={handleChange}
+                                    placeholder="Enter Flash timing effect..."
+                                    className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white h-20 resize-none focus:border-amber-400"
+                                />
+                            </div>
+                        </div>
+                    )}
+
                     {/* Symbols Section */}
-                    <div className='p-4 bg-slate-900 rounded-lg border border-slate-700 space-y-3 mt-4'>
+                    <div className="p-4 bg-slate-900 rounded-lg border border-slate-700 space-y-3 mt-4">
                         <div className="flex justify-between items-center">
-                            <h3 className='font-bold text-amber-400'>
-                                Symbols
-                            </h3>
-                            <button onClick={addSymbol} className='px-3 py-1 bg-amber-600 hover:bg-amber-500 text-white text-xs rounded font-bold transition-colors'>
+                            <h3 className="font-bold text-amber-400">Symbols</h3>
+                            <button
+                                type="button"
+                                onClick={addSymbol}
+                                className="px-3 py-1 bg-amber-600 hover:bg-amber-500 text-white text-xs rounded font-bold transition-colors cursor-pointer"
+                            >
                                 + Add Symbol
                             </button>
                         </div>
                         {cardData.symbols.map((sym, index) => (
-                            <div key={index} className='flex gap-2 items-center bg-slate-600 text-white text-sm'>
-                                <select value={sym.color} onChange={(e) => updateSymbol(index, 'color', e.target.value)}
-                                    className='p-1 bg-slate-700 rounded border border-slate-600 text-white text-sm'>
-                                    <option value={"Red"}>Red</option>
-                                    <option value={"Purple"}>Purple</option>
-                                    <option value={"Green"}>Green</option>
-                                    <option value={"White"}>White</option>
-                                    <option value={"Yellow"}>Yellow</option>
-                                    <option value={"Blue"}>Blue</option>
+                            <div key={index} className="flex gap-2 items-center bg-slate-800 p-2 rounded border border-slate-700">
+                                <select
+                                    value={sym.color}
+                                    onChange={(e) => updateSymbol(index, 'color', e.target.value)}
+                                    className="p-1 bg-slate-700 rounded border border-slate-600 text-white text-sm cursor-pointer"
+                                >
+                                    <option value="Red">Red</option>
+                                    <option value="Purple">Purple</option>
+                                    <option value="Green">Green</option>
+                                    <option value="White">White</option>
+                                    <option value="Yellow">Yellow</option>
+                                    <option value="Blue">Blue</option>
                                 </select>
-                                <input type="number" min="0" value={sym.amount || 0} onChange={(e) => updateSymbol(index, 'amount', Number(e.target.value))}
-                                    className='w-16 p-1 bg-slate-700 rounded border border-slate-600 text-white text-sm' />
-                                <label className='flex items-center space-x-1 text-sm text-slate-300 cursor-pointer m1-2'>
-                                    <input type="checkbox" checked={sym.type === 'EX'}
+                                <input
+                                    type="number"
+                                    min="1"
+                                    value={sym.amount || 1}
+                                    onChange={(e) => updateSymbol(index, 'amount', Number(e.target.value))}
+                                    className="w-16 p-1 bg-slate-700 rounded border border-slate-600 text-white text-sm"
+                                    placeholder="Amt"
+                                />
+                                <label className="flex items-center space-x-1 text-sm text-slate-300 cursor-pointer ml-2">
+                                    <input
+                                        type="checkbox"
+                                        checked={sym.type === 'EX'}
                                         onChange={(e) => updateSymbol(index, 'type', e.target.checked ? 'EX' : 'Normal')}
-                                        className='w-4 h-4 rounded text-amber-500' />
+                                        className="w-4 h-4 rounded text-amber-500"
+                                    />
                                     <span className="font-bold text-amber-500">EX</span>
                                 </label>
-                                <button onClick={() => removeSymbol(index)} className="m1-auto text-slate-400 hover:text-red-400 font-bold px-2 text-xl">&times;</button>
+                                <button
+                                    type="button"
+                                    onClick={() => removeSymbol(index)}
+                                    className="ml-auto text-slate-400 hover:text-red-400 font-bold px-2 text-xl cursor-pointer"
+                                >
+                                    &times;
+                                </button>
                             </div>
                         ))}
                     </div>
 
-                    {/* Effects Section */}
-                    <div className='p-4 bg-slate-950 rounded-lg border border-slate-700 space-y-4 my-4'>
-                        <div className='flex justify-between items-center'>
-                            <h3 className='font-bold text-cyan-400'>Effects</h3>
-                            <button onClick={addEffect} className="px-3 py-1 bg-cyan-600 text-white text-xs rounded font-bold transition-colors">
-                                + Add Effects
-                            </button>
-                        </div>
-                    </div>
+                    {/* Levels Section */}
+                    {(cardData.type === 'Spirit' || cardData.type === 'Nexus') && (
+                        <div className="p-4 bg-slate-900 rounded-lg border border-slate-700 space-y-3 mt-4">
+                            <div className="flex justify-between items-center">
+                                <h3 className="font-bold text-amber-400">Levels</h3>
+                                <button
+                                    type="button"
+                                    onClick={() => {
+                                        const newLevels = [...(cardData.levels || [])];
+                                        const nextLevel = newLevels.length + 1;
+                                        newLevels.push({ level: nextLevel, coreCost: 1, bp: cardData.type === 'Spirit' ? 1000 : undefined });
+                                        setCardData({ ...cardData, levels: newLevels } as Card);
+                                    }}
+                                    className="px-3 py-1 bg-amber-600 hover:bg-amber-500 text-white text-xs rounded font-bold transition-colors cursor-pointer"
+                                >
+                                    + Add Level
+                                </button>
+                            </div>
+                            {(cardData.levels || []).map((lvl: any, index: number) => (
+                                <div key={index} className="flex flex-wrap gap-2 items-center bg-slate-800 p-2 rounded border border-slate-700">
+                                    <span className="text-slate-300 font-bold text-sm w-12">LV {lvl.level}</span>
 
-                    {/*Image URL*/}
+                                    <div className="flex items-center gap-1">
+                                        <label className="text-xs text-slate-400">Core</label>
+                                        <input
+                                            type="number"
+                                            min="0"
+                                            value={lvl.coreCost}
+                                            onChange={(e) => {
+                                                const newLevels = [...cardData.levels];
+                                                newLevels[index].coreCost = Number(e.target.value);
+                                                setCardData({ ...cardData, levels: newLevels } as Card);
+                                            }}
+                                            className="w-16 p-1 bg-slate-700 rounded border border-slate-600 text-white text-sm"
+                                        />
+                                    </div>
+
+                                    {cardData.type === 'Spirit' && (
+                                        <div className="flex items-center gap-1">
+                                            <label className="text-xs text-slate-400">BP</label>
+                                            <input
+                                                type="number"
+                                                min="0"
+                                                step="1000"
+                                                value={lvl.bp || 0}
+                                                onChange={(e) => {
+                                                    const newLevels = [...cardData.levels];
+                                                    newLevels[index].bp = Number(e.target.value);
+                                                    setCardData({ ...cardData, levels: newLevels } as Card);
+                                                }}
+                                                className="w-20 p-1 bg-slate-700 rounded border border-slate-600 text-white text-sm"
+                                            />
+                                        </div>
+                                    )}
+
+                                    <label className="flex items-center space-x-1 text-sm text-slate-300 cursor-pointer ml-2">
+                                        <input
+                                            type="checkbox"
+                                            checked={lvl.isTrueRelease || false}
+                                            onChange={(e) => {
+                                                const newLevels = [...cardData.levels];
+                                                if (e.target.checked) {
+                                                    newLevels[index].isTrueRelease = true;
+                                                } else {
+                                                    delete newLevels[index].isTrueRelease;
+                                                }
+                                                setCardData({ ...cardData, levels: newLevels } as Card);
+                                            }}
+                                            className="w-4 h-4 rounded text-amber-500"
+                                        />
+                                        <span className="font-bold text-amber-500 text-xs">True Release</span>
+                                    </label>
+
+                                    <button
+                                        type="button"
+                                        onClick={() => {
+                                            const newLevels = cardData.levels.filter((_: any, i: number) => i !== index);
+                                            newLevels.forEach((l: any, i: number) => { l.level = i + 1; });
+                                            setCardData({ ...cardData, levels: newLevels } as Card);
+                                        }}
+                                        className="ml-auto text-slate-400 hover:text-red-400 font-bold px-2 text-xl cursor-pointer"
+                                    >
+                                        &times;
+                                    </button>
+                                </div>
+                            ))}
+                        </div>
+                    )}
+
+                    {/* Spirit & Nexus Card Effects Builder (Reusable component) */}
+                    {(cardData.type === 'Spirit' || cardData.type === 'Nexus') && (
+                        <CardEffectsBuilder
+                            title={`${cardData.type} Effects Builder`}
+                            effects={cardData.effects}
+                            onChange={(newEffects) => setCardData({ ...cardData, effects: newEffects } as Card)}
+                        />
+                    )}
+
+                    {/* Optional extra effects for Magic cards */}
+                    {cardData.type === 'Magic' && (
+                        <details className="text-sm bg-slate-900 p-3 rounded border border-slate-800">
+                            <summary className="cursor-pointer text-slate-400 font-semibold hover:text-white">
+                                + Additional Effects / Tags (Optional)
+                            </summary>
+                            <div className="mt-3">
+                                <CardEffectsBuilder
+                                    title="Extra Magic Effects"
+                                    effects={cardData.effects}
+                                    onChange={(newEffects) => setCardData({ ...cardData, effects: newEffects } as Card)}
+                                />
+                            </div>
+                        </details>
+                    )}
+
+                    {/* Image URL */}
                     <div>
                         <label className="block text-sm font-semibold mb-1 text-slate-400">Image URL</label>
-                        <input name="imageUrl" value={cardData.imageUrl || ''} onChange={handleChange} placeholder="/cards/26RSD01/26RSD01-000.webp" className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white" />
+                        <input
+                            name="imageUrl"
+                            value={cardData.imageUrl || ''}
+                            onChange={handleChange}
+                            placeholder="/cards/26RSD01-001.png"
+                            className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white focus:border-amber-400"
+                        />
                     </div>
 
-                    {/* JSON Output box to copy and paste into mockCards.ts */}
+                    {/* JSON Output box */}
                     <div className="mt-8">
                         <div className="flex justify-between items-center mb-2">
                             <h3 className="font-bold text-emerald-400">JSON Output</h3>
                             <button
-                                onClick={() => navigator.clipboard.writeText(jsonCode)}
+                                type="button"
+                                onClick={() => navigator.clipboard.writeText(jsCode)}
                                 className="bg-emerald-600 hover:bg-emerald-500 text-white px-3 py-1 rounded text-sm transition font-semibold cursor-pointer"
                             >
                                 Copy JSON
                             </button>
                         </div>
                         <pre className="bg-slate-950 p-4 rounded border border-slate-800 text-sm overflow-x-auto text-emerald-300 h-64">
-                            {jsonCode}
+                            {jsCode}
                         </pre>
                     </div>
 
@@ -329,9 +452,7 @@ export const CardCreator = () => {
             {/* Right side: Live Preview */}
             <div className="w-full lg:w-1/2 flex flex-col items-center">
                 <h2 className="text-2xl font-bold mb-6 text-cyan-400">Live Preview</h2>
-
-                {/* display cardView component by passing data from form */}
-                <div className="sticky top-6">
+                <div className="sticky top-20">
                     <CardView card={cardData} />
                 </div>
             </div>

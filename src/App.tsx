@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { mockCards } from './data/mockCards';
 import { CardView } from './components/CardView';
 import { CardCreator } from './components/CardCreator';

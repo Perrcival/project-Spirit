@@ -24,7 +24,7 @@ export const mockCards: Card[] = [
         effects: [
             '[LV2] <During Attack> : At the end of battle, if your Hand is five or less, draw a card.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-001.webp' // รูปจำลองชั่วคราว
+        imageUrl: '/cards/red/26RSD01-001.webp' // รูปจำลองชั่วคราว
     },
 
     {
@@ -49,7 +49,7 @@ export const mockCards: Card[] = [
         effects: [
             '[LV2] <True Release> During Attack : This Spirit gains +2000 BP.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-002.webp'
+        imageUrl: '/cards/red/26RSD01-002.webp'
 
     },
 
@@ -75,7 +75,7 @@ export const mockCards: Card[] = [
         effects: [
             '[LV1-2] <When Summoned> : If you control any exhausted Red Spirit, target an opposing 3000 BP or less Spirit. Destroy it.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-003.webp'
+        imageUrl: '/cards/red/26RSD01-003.webp'
     },
 
     {
@@ -100,7 +100,7 @@ export const mockCards: Card[] = [
         effects: [
             '[LV2] <When Attacks> : Reveal two cards from your decktop. Among them, add a "Windfang" family card to the Hand. Discard any remaining cards.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-004.webp'
+        imageUrl: '/cards/red/26RSD01-004.webp'
     },
 
     {
@@ -123,7 +123,7 @@ export const mockCards: Card[] = [
             { level: 2, coreCost: 3, bp: 8000 }
         ],
         effects: [],
-        imageUrl: '/cards/26RSD01/26RSD01-005.webp'
+        imageUrl: '/cards/red/26RSD01-005.webp'
     },
 
     {
@@ -149,7 +149,7 @@ export const mockCards: Card[] = [
             '[LV1-2] <When Summoned> : Send up to two cores, besides Soul core, from your Trash to this Spirit.',
             '[LV2] <Your End Step> : You can target one of your "Windfang" family Spirit/Nexuses. Send the Soul core from your Tash to it.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-006.webp'
+        imageUrl: '/cards/red/26RSD01-006.webp'
     },
 
     {
@@ -175,7 +175,7 @@ export const mockCards: Card[] = [
             '[LV1-2] <During Attack> <Invoke:Flash> <Once Per Turn>: Discard a "Windfang" family card from your Hand. During this battle, this Spirit gains +3000 BP.',
             '[LV2] <True Release> <When Attacks> : Target an opposing 3000 BP or less Spirit. Destroy it.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-007.webp'
+        imageUrl: '/cards/red/26RSD01-007.webp'
     },
 
     {
@@ -202,7 +202,7 @@ export const mockCards: Card[] = [
             'You can banish EX Symbols from your Trash for reductions.',
             '[LV1-2] <When Summoned> : You can target a "Windfang" family Spirit card, besieds "Sertarius", in your Trash. Return it to the Hand.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-008.webp'
+        imageUrl: '/cards/red/26RSD01-008.webp'
     },
 
     {
@@ -228,7 +228,7 @@ export const mockCards: Card[] = [
             '[LV1-2] <When Summoned> : If you control any exhausted "Windfang" family Spirit, target an opposing 5000 BP or less Spirit. Destroy it.',
             '[LV2] <True Release> <During Attack> :'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-009.webp'
+        imageUrl: '/cards/red/26RSD01-009.webp'
     },
 
     {
@@ -253,7 +253,7 @@ export const mockCards: Card[] = [
             '[LV1-LV2] <Your Attack Step> <Invoke:Flash> : Exhaust this Nexus => Target one of your attacking "Windfang" family Spirits. During this battle, it gains +2000 BP.',
             '[LV2] <True Release> <Your Attack Step> <Once Per Turn> : When you destroy any opposing Spirits, you can target one of your Spirits. Send a core, besides Soul Core, from your Trash to it.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-010.webp'
+        imageUrl: '/cards/red/26RSD01-010.webp'
     },
 
     {
@@ -278,7 +278,7 @@ export const mockCards: Card[] = [
             '[LV1-LV2] <When Deployed> : If you control any exhausted Red Spirit, target a Cost 4 or less "Windfang" family Spirit card in your Trash. Return it to the Hand.',
             '[LV2] <Your Attack Step> : All your Spirits with Legacy gain +2000 BP.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-011.webp'
+        imageUrl: '/cards/red/26RSD01-011.webp'
     },
 
     {
@@ -301,7 +301,7 @@ export const mockCards: Card[] = [
             '[Main] : Target an opposing Nexus that isn\'t during True Release. Destroy it. Then, if you control any exhausted Red Spirit, send a core, besides Soul Core, from your Trash to the Reserve.',
             '[Flash] : Target one of your Spirits. During this turn, give it +3000 BP.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-012.webp'
+        imageUrl: '/cards/red/26RSD01-012.webp'
     },
 
     {
@@ -324,7 +324,7 @@ export const mockCards: Card[] = [
             '[Main] : Reveal three cards from your decktop. Among them, besides "Offering Draw", add two "Windfang" family cards to the Hand. Return any remaining cards to the deckbottom in any order.',
             '[Flash] : Target one of your Spirits. During this turn, give it +2000 BP.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-013.webp'
+        imageUrl: '/cards/red/26RSD01-013.webp'
     },
 
     {
@@ -348,7 +348,7 @@ export const mockCards: Card[] = [
             '[Soul Magic: Red] : If you control any Red symbol, you can use it with just the Soul Core.',
             '[Flash] : Target an opposing 7000 BP or less Spirit. Destroy it. If your Life was reduced during this turn, the targeting BP becomes 10000 instead.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-014.webp'
+        imageUrl: '/cards/red/26RSD01-014.webp'
     },
 
     {
@@ -375,7 +375,7 @@ export const mockCards: Card[] = [
             '[LV1-2] <When Summoned> : Target an opposing 7000 BP or less Spirit. Destroy it.',
             '[LV2] <When Attacks> : You can target a "Windfang" family Spirit you control. Put up to two cores, besides Soul Core, from your Trash to it.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-X01.webp'
+        imageUrl: '/cards/red/26RSD01-X01.webp'
     },
 
     {
@@ -401,6 +401,59 @@ export const mockCards: Card[] = [
             '[LV1-2] <During Attack> <Invoke: Flash> <Once Per Turn> : Discard a "Windfang" family card from your Hand => During this battle, this Spirit gains +3000 BP.',
             '[LV2] <True Release> <When Attacks> : Reveal three cards from your decktop. Among them, add a "Windfang" family card to the Hand. Discard any remaining cards.'
         ],
-        imageUrl: '/cards/26RSD01/26RSD01-X02.webp'
+        imageUrl: '/cards/red/26RSD01-X02.webp'
+    },
+
+    {
+        id: "26RSD02-001",
+        name: "Sclouse",
+        type: "Spirit",
+        colors: [
+            "Purple"
+        ],
+        cost: 2,
+        reductions: [],
+        symbols: [
+            {
+                color: "Purple",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Dark Puce",
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Destroy"
+                    }
+                ],
+                description: "Target an opposing Spirit. Send a core, besides Soul Core, from it to the Reserve."
+            }
+        ],
+        imageUrl: "/cards/purple/26RSD02-001.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 1000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 2000
+            }
+        ]
     }
 ];

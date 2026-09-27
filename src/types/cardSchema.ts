@@ -73,6 +73,8 @@ export interface MagicCard extends BaseCard {
     soulMagicConditionColor?: Color;
     isMain?: boolean;
     isFlash?: boolean;
+    mainEffect?: string | CardEffect;
+    flashEffect?: string | CardEffect;
 }
 
 // Combine all card type to single name for simpler calls
