@@ -112,17 +112,32 @@ export const CardEffectsBuilder: React.FC<CardEffectsBuilderProps> = ({
                         <div className="flex-1 space-y-3 pr-6">
                             {/* Active Levels */}
                             <div>
-                                <label className="text-xs font-semibold text-slate-400 mb-1 block">Active Levels (e.g. 1, 2)</label>
-                                <input
-                                    type="text"
-                                    value={eff.levels?.join(', ') || ''}
-                                    onChange={(e) => {
-                                        const lvls = e.target.value.split(',').map(n => Number(n.trim())).filter(n => !isNaN(n) && n > 0);
-                                        updateEffect(effIndex, 'levels', lvls);
-                                    }}
-                                    placeholder="e.g. 1, 2"
-                                    className="w-full p-2 bg-slate-700 rounded border border-slate-600 text-white text-sm outline-none focus:border-cyan-400"
-                                />
+                                <label className="text-xs font-semibold text-slate-400 mb-2 block">Active Levels</label>
+                                <div className="flex gap-4 items-center">
+                                    {[1, 2, 3, 4].map(level => {
+                                        const isChecked = eff.levels?.includes(level) || false;
+                                        return (
+                                            <label key={level} className="flex items-center space-x-1.5 text-sm text-slate-300 cursor-pointer">
+                                                <input
+                                                    type="checkbox"
+                                                    checked={isChecked}
+                                                    onChange={(e) => {
+                                                        let newLevels = eff.levels ? [...eff.levels] : [];
+                                                        if (e.target.checked) {
+                                                            if (!newLevels.includes(level)) newLevels.push(level);
+                                                        } else {
+                                                            newLevels = newLevels.filter(l => l !== level);
+                                                        }
+                                                        newLevels.sort((a, b) => a - b);
+                                                        updateEffect(effIndex, 'levels', newLevels);
+                                                    }}
+                                                    className="w-4 h-4 rounded text-cyan-500 bg-slate-700 border-slate-600 focus:ring-cyan-400"
+                                                />
+                                                <span className="font-semibold">LV {level}</span>
+                                            </label>
+                                        );
+                                    })}
+                                </div>
                             </div>
 
                             {/* Tags Section */}

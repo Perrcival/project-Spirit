@@ -178,7 +178,7 @@ export const CardView: React.FC<CardViewProps> = ({ card, hideImage = false }) =
                         <div key={i} style={{ margin: '0 0 8px 0', lineHeight: '1.4' }}>
                             {eff.levels && eff.levels.length > 0 && (
                                 <span style={{ fontWeight: 'bold', marginRight: '4px' }}>
-                                    [LV{eff.levels.join('-LV')}]
+                                    [LV{eff.levels.join('-')}]
                                 </span>
                             )}
                             {eff.tags && eff.tags.map((tag, tIndex) => {
