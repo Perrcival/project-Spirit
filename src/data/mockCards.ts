@@ -98,7 +98,7 @@ export const mockCards: Card[] = [
             { level: 2, coreCost: 3, bp: 6000 }
         ],
         effects: [
-            '[LV2] <When Attacks> : Reveal two cards from your decktop. Amoung them, add a "Windfang" family card to the Hand. Discard any remaining cards.'
+            '[LV2] <When Attacks> : Reveal two cards from your decktop. Among them, add a "Windfang" family card to the Hand. Discard any remaining cards.'
         ],
         imageUrl: '/cards/26RSD01/26RSD01-004.webp'
     },
