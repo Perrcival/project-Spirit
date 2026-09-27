@@ -104,7 +104,11 @@ export const CardCreator = () => {
     };
 
     // 3. Transform data back to JS object format (remove quotes from keys)
-    const jsCode = JSON.stringify(cardData, null, 2).replace(/"([a-zA-Z0-9_]+)":/g, '$1:');
+    const exportData = { ...cardData };
+    if (exportData.type === 'Magic') {
+        delete (exportData as any).levels;
+    }
+    const jsCode = JSON.stringify(exportData, null, 2).replace(/"([a-zA-Z0-9_]+)":/g, '$1:');
 
     return (
         <div className="flex flex-col lg:flex-row gap-8 p-6 bg-slate-900 min-h-screen text-slate-200 font-sans">
@@ -136,8 +140,8 @@ export const CardCreator = () => {
                         </div>
                     </div>
 
-                    {/* Type, Cost, Legacy */}
-                    <div className="grid grid-cols-4 gap-4">
+                    {/* Type, Cost, Rarity, Legacy */}
+                    <div className="grid grid-cols-5 gap-4">
                         <div>
                             <label className="block text-sm font-semibold mb-1 text-slate-400">Color</label>
                             <select
@@ -185,6 +189,26 @@ export const CardCreator = () => {
                                 onChange={handleChange}
                                 className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white"
                             />
+                        </div>
+                        <div>
+                            <label className="block text-sm font-semibold mb-1 text-slate-400">Rarity</label>
+                            <select
+                                name="rarity"
+                                value={cardData.rarity?.[0] || 'Common'}
+                                onChange={(e) => {
+                                    setCardData({
+                                        ...cardData,
+                                        rarity: [e.target.value]
+                                    } as any);
+                                }}
+                                className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white cursor-pointer"
+                            >
+                                <option value="Common">Common</option>
+                                <option value="Rare">Rare</option>
+                                <option value="Master Rare">Master Rare</option>
+                                <option value="X-Rare">X-Rare</option>
+                                <option value="PR">PR</option>
+                            </select>
                         </div>
                         <div className="flex items-end pb-2">
                             <label className="flex items-center space-x-2 text-sm text-slate-300 font-semibold cursor-pointer">

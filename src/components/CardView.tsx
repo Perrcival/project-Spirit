@@ -128,7 +128,7 @@ export const CardView: React.FC<CardViewProps> = ({ card, hideImage = false }) =
             </div>
 
             {/* ตาราง Levels (กรณีที่เป็น Spirit หรือ Nexus) */}
-            {'levels' in card && card.levels && (
+            {card.type !== 'Magic' && card.levels && (
                 <div style={{ backgroundColor: '#fff', padding: '6px', borderRadius: '6px', fontSize: '11px' }}>
                     {card.levels.map((lvl) => (
                         <div key={lvl.level} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed #e5e7eb', padding: '2px 0' }}>
