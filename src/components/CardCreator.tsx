@@ -60,6 +60,28 @@ export const CardCreator = () => {
         setCardData({ ...cardData, families: arr } as any);
     };
 
+    // --- Reduction handlers ---
+    const addReduction = () => {
+        const currentReductions = cardData.reductions || [];
+        setCardData({
+            ...cardData,
+            reductions: [...currentReductions, { color: 'Red', amount: 1 }]
+        } as Card);
+    };
+
+    const updateReduction = (index: number, field: string, value: any) => {
+        const newReductions = [...(cardData.reductions || [])];
+        newReductions[index] = { ...newReductions[index], [field]: value };
+        setCardData({ ...cardData, reductions: newReductions } as Card);
+    };
+
+    const removeReduction = (index: number) => {
+        setCardData({
+            ...cardData,
+            reductions: (cardData.reductions || []).filter((_, i) => i !== index)
+        } as Card);
+    };
+
     // --- Symbol handlers ---
     const addSymbol = () => {
         setCardData({
@@ -248,6 +270,52 @@ export const CardCreator = () => {
                             </div>
                         </div>
                     )}
+
+                    {/* Reductions Section */}
+                    <div className="p-4 bg-slate-900 rounded-lg border border-slate-700 space-y-3 mt-4">
+                        <div className="flex justify-between items-center">
+                            <h3 className="font-bold text-emerald-400">Reductions</h3>
+                            <button
+                                type="button"
+                                onClick={addReduction}
+                                className="px-3 py-1 bg-emerald-600 hover:bg-emerald-500 text-white text-xs rounded font-bold transition-colors cursor-pointer"
+                            >
+                                + Add Reduction
+                            </button>
+                        </div>
+                        {(cardData.reductions || []).map((red, index) => (
+                            <div key={index} className="flex gap-2 items-center bg-slate-800 p-2 rounded border border-slate-700">
+                                <select
+                                    value={red.color}
+                                    onChange={(e) => updateReduction(index, 'color', e.target.value)}
+                                    className="p-1 bg-slate-700 rounded border border-slate-600 text-white text-sm cursor-pointer"
+                                >
+                                    <option value="Red">Red</option>
+                                    <option value="Purple">Purple</option>
+                                    <option value="Green">Green</option>
+                                    <option value="White">White</option>
+                                    <option value="Yellow">Yellow</option>
+                                    <option value="Blue">Blue</option>
+                                    <option value="Colorless">Colorless</option>
+                                </select>
+                                <input
+                                    type="number"
+                                    min="1"
+                                    value={red.amount || 1}
+                                    onChange={(e) => updateReduction(index, 'amount', Number(e.target.value))}
+                                    className="w-16 p-1 bg-slate-700 rounded border border-slate-600 text-white text-sm"
+                                    placeholder="Amt"
+                                />
+                                <button
+                                    type="button"
+                                    onClick={() => removeReduction(index)}
+                                    className="ml-auto text-slate-400 hover:text-red-400 font-bold px-2 text-xl cursor-pointer"
+                                >
+                                    &times;
+                                </button>
+                            </div>
+                        ))}
+                    </div>
 
                     {/* Symbols Section */}
                     <div className="p-4 bg-slate-900 rounded-lg border border-slate-700 space-y-3 mt-4">
