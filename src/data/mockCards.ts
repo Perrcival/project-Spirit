@@ -460,5 +460,781 @@ export const mockCards: Card[] = [
                 bp: 2000
             }
         ]
+    },
+
+    {
+        id: "26RSD02-003",
+        name: "Medici-Cattery",
+        type: "Spirit",
+        colors: [
+            "Purple"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Dark Puce",
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    }
+                ],
+                description: "This Spirit gains +3000 BP."
+            }
+        ],
+        imageUrl: "/cards/purple/26RSD02-003.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 3000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 5000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD02-004",
+        name: "Garsis",
+        type: "Spirit",
+        colors: [
+            "Purple"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "When Attack"
+                    }
+                ],
+                description: "Target an opposing Cost 4 or less Spirit. Send a core, besides Soul Core from it to the Reserve."
+            }
+        ],
+        imageUrl: "/cards/purple/26RSD02-004.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 3000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 5000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD02-005",
+        name: "Boogilugar",
+        type: "Spirit",
+        colors: [
+            "Purple"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Dark Puce",
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/purple/26RSD02-005.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 5000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 8000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD02-006",
+        name: "Ram Toker",
+        type: "Spirit",
+        colors: [
+            "Purple"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Dark Puce",
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Draw a card."
+            }
+        ],
+        imageUrl: "/cards/purple/26RSD02-006.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 4000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 6000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD02-007",
+        name: "Lady Lamica",
+        type: "Spirit",
+        colors: [
+            "Purple"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "If you control any exhausted \"Bloodrouse\" family Spirit, target an opposing Spirit. Send a core, besides Soul Core, from it to the Reserve."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    }
+                ],
+                description: "This Spirit gains +2000 BP."
+            }
+        ],
+        imageUrl: "/cards/purple/26RSD02-007.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 4000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 6000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD02-008",
+        name: "Ogrul",
+        type: "Spirit",
+        colors: [
+            "Purple"
+        ],
+        cost: 6,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Attacks"
+                    }
+                ],
+                description: "Target an opposing Spirit. Send a core, besides Soul Core, from it to the Reserve."
+            }
+        ],
+        imageUrl: "/cards/purple/26RSD02-008.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 6000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 8000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD02-009",
+        name: "Utmost Depth: The Bloodrouse Mountain Range",
+        type: "Nexus",
+        colors: [
+            "Purple"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Your Attack Step"
+                    },
+                    {
+                        color: "Purple",
+                        name: "Invoke: Flash"
+                    }
+                ],
+                description: "Exhaust this Nexus > Target one of your attacking \"Bloodrouse\" family Spirits. During this battle, it gains +2000 BP."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "Your Main Step"
+                    }
+                ],
+                description: "When you're summoning any \"Bloodrouse\" family Spirit card, if any opposing Spirit is depleted this turn, this Nexus gains an extra Purple symbol."
+            }
+        ],
+        imageUrl: "/cards/purple/26RSD02-009.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD02-010",
+        name: "The Violet Witherlands",
+        type: "Nexus",
+        colors: [
+            "Purple"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Deployed"
+                    }
+                ],
+                description: "Target an opposing Spirit. Send a core, besides Soul Core, from it to the Reserve."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Purple",
+                        name: "Invoke: Main"
+                    }
+                ],
+                description: "Destroy this Nexus ▶ Target an opposing Cost 3 or less Spirit. Send cores from it to the Reserve until one core remains. (The opponent chooses which cores to send.)"
+            }
+        ],
+        imageUrl: "/cards/purple/26RSD02-010.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 1
+            }
+        ]
+    },
+
+    {
+        id: "26RSD02-011",
+        name: "Dark Hang",
+        type: "Magic",
+        colors: [
+            "Purple"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 2
+            }
+        ],
+        symbols: [],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/purple/26RSD02-011.webp",
+        mainEffect: "Target one of your \"Bloodrouse\" family Spirits. Destroy it. If you've done so, put a core from the Void to your Reserve.",
+        flashEffect: "Target one of your Spirits. During this turn, give it +2000 BP."
+    },
+
+    {
+        id: "26RSD02-012",
+        name: "Blood Sip",
+        type: "Magic",
+        colors: [
+            "Purple"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/purple/26RSD02-012.webp",
+        mainEffect: "",
+        flashEffect: "Target an opposing Spirit. Send cores from it to the Reserve until one core remains. (The opponent choses which cores to send)"
+    },
+
+    {
+        id: "26RSD02-013",
+        name: "Rainy Poison",
+        type: "Magic",
+        colors: [
+            "Purple"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 3
+            }
+        ],
+        symbols: [],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: true,
+        effects: [],
+        imageUrl: "/cards/purple/26RSD02-013.webp",
+        mainEffect: "",
+        flashEffect: "Target one of your Spirits. During this turn, give it +2000 BP. Then, if your Life was reduced this turn, during this turn, your Life can't be reduced by the attacks of opposing Spirits with one core on them."
+    },
+
+    {
+        id: "26RSD02-014",
+        name: "Soul Bite",
+        type: "Magic",
+        colors: [
+            "Purple"
+        ],
+        cost: 6,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/purple/26RSD02-014.webp",
+        mainEffect: "",
+        flashEffect: "Target an opposing Spirit. Send two cores from it to the Reserve. (The opponent chooses which cores to send)",
+        soulMagicConditionColor: "Purple"
+    },
+
+    {
+        id: "26RSD02-X01",
+        name: "The HeadNurse Nephila",
+        type: "Spirit",
+        colors: [
+            "Purple"
+        ],
+        cost: 7,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "X-Rare"
+        ],
+        hasLegacy: true,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Target an opposing Spirit. Send cores from it to the Reserve until one core remains. (The opponent chooses which cores to send.)"
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Attacks"
+                    }
+                ],
+                description: "Target an opposing Spirit. Send a core, besides Soul Core, from it to the Reserve. If it depletes, draw a card."
+            }
+        ],
+        imageUrl: "/cards/purple/26RSD02-X01.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 7000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 9000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD02-X02",
+        name: "Emperor Perigorouge",
+        type: "Spirit",
+        colors: [
+            "Purple"
+        ],
+        cost: 9,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 4
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "X-Rare"
+        ],
+        hasLegacy: true,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Target an opposing Spirit. Send a total of two cores from it to the Reserve. If you control any exhausted \"Bloodrouse\" family Spirit, target up to two Spirits instead. (The opponent chooses which cores to send.)"
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "During Attacks"
+                    }
+                ],
+                description: "If any opposing Spirit is depleted by your effects this turn, this Spirit can't be blocked by opposing Cost 4 or less Spirits."
+            }
+        ],
+        imageUrl: "/cards/purple/26RSD02-X02.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 7000
+            },
+            {
+                level: 2,
+                coreCost: 4,
+                bp: 10000,
+                isTrueRelease: true
+            }
+        ]
     }
 ];
