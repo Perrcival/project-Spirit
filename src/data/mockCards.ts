@@ -463,6 +463,64 @@ export const mockCards: Card[] = [
     },
 
     {
+        id: "26RSD02-002",
+        name: "Firalba",
+        type: "Spirit",
+        colors: [
+            "Purple"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Purple",
+                amount: 1
+            }
+        ],
+        symbols: [
+            {
+                color: "Purple",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Bloodrouse"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Destroy"
+                    }
+                ],
+                description: "Draw a card."
+            }
+        ],
+        imageUrl: "/cards/purple/26RSD02-002.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 2000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 2000
+            }
+        ]
+    },
+
+    {
         id: "26RSD02-003",
         name: "Medici-Cattery",
         type: "Spirit",
