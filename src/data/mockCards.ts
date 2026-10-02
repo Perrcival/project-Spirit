@@ -1294,5 +1294,957 @@ export const mockCards: Card[] = [
                 isTrueRelease: true
             }
         ]
+    },
+
+    {
+        id: "26RSD03-001",
+        name: "Flutty",
+        type: "Spirit",
+        colors: [
+            "Green"
+        ],
+        cost: 2,
+        reductions: [
+            {
+                color: "Green",
+                amount: 1
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Flash - Opposing Attack Step"
+                    }
+                ],
+                description: "You can summon this card from the Hand using cores from the Reserve to pay for the summon cost and putting onto it."
+            }
+        ],
+        imageUrl: "/cards/green/26RSD03-001.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 1000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 3000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-002",
+        name: "Puffer",
+        type: "Spirit",
+        colors: [
+            "Green"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Green",
+                amount: 1
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Put a core from the Void to your Trash."
+            }
+        ],
+        imageUrl: "/cards/green/26RSD03-002.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 2000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 3000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-003",
+        name: "Rassehead",
+        type: "Spirit",
+        colors: [
+            "Green"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Green",
+                amount: 1
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Oceanic Green",
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "You can target an opposing Cost 4 or less Spirits. Exhaust it."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    }
+                ],
+                description: "This Spirit gains +2000 BP."
+            }
+        ],
+        imageUrl: "/cards/green/26RSD03-003.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 3000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 5000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-004",
+        name: "Straray",
+        type: "Spirit",
+        colors: [
+            "Green"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Green",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Oceanic Green",
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/green/26RSD03-004.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 4000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 7000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-005",
+        name: "Mola Moula",
+        type: "Spirit",
+        colors: [
+            "Green"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Green",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Oceanic Green",
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/green/26RSD03-005.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 5000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 8000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-006",
+        name: "The OceanPhantom Coela-Canth",
+        type: "Spirit",
+        colors: [
+            "Green"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "Green",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Besides this Spirit, you can target an \"Armored Fish\" family Spirit you control. Put a core from the Void to it. Then, if you control any exhausted \"Armored Fish\" family Spirit, you can target one of your Spirits. Refresh it."
+            }
+        ],
+        imageUrl: "/cards/green/26RSD03-006.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 4000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 6000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-007",
+        name: "Garizarot",
+        type: "Spirit",
+        colors: [
+            "Green"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "Green",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Attacks"
+                    }
+                ],
+                description: "You can target an opposing exhausted Spirit. During this battle, it must block if possible even while exhausted."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    }
+                ],
+                description: "This Spirit gains +2000 BP."
+            }
+        ],
+        imageUrl: "/cards/green/26RSD03-007.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 5000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 6000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-008",
+        name: "The HeavyJaws Dorogoliath",
+        type: "Spirit",
+        colors: [
+            "Green"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "Green",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    }
+                ],
+                description: "For each \"Armored Fish\" family Spirit you control, this Spirit gains +1000 BP."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Attacks"
+                    }
+                ],
+                description: "You can target an opposing Cost 3 or less Spirit. Exhaust it."
+            }
+        ],
+        imageUrl: "/cards/green/26RSD03-008.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 5000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 6000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-009",
+        name: "The TransparentHood Olindias",
+        type: "Spirit",
+        colors: [
+            "Green"
+        ],
+        cost: 6,
+        reductions: [
+            {
+                color: "Green",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Reveal three cards from your decktop. Among them, you can summon/deploy a Cost 3 or less \"Armored Fish\" family card. Return any remaining cards to the deckbottom in any order."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Blocks"
+                    }
+                ],
+                description: "You can target an opposing Spirit. Exhaust it."
+            }
+        ],
+        imageUrl: "/cards/green/26RSD03-009.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 6000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 7000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-010",
+        name: "Utmost Depth: The Emerald Abyss",
+        type: "Nexus",
+        colors: [
+            "Green"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Green",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Your Attack Step"
+                    }
+                ],
+                description: "All your attacking \"Armored Fish\" family Spirits gain +1000 BP."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Purple",
+                        name: "Invoke: Main"
+                    },
+                    {
+                        color: "Red",
+                        name: "Once Per Turn"
+                    }
+                ],
+                description: "Show a Cost 4 or less \"Armored Fish\" family card from your Hand to the opponent. Return it to the deckbottom ▶ Draw a card."
+            }
+        ],
+        imageUrl: "/cards/green/26RSD03-010.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-011",
+        name: "The Bubble Cluster Realm",
+        type: "Nexus",
+        colors: [
+            "Green"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Green",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Deployed"
+                    }
+                ],
+                description: "You can target an opposing Spirit. Exhaust it."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Start of Your Main Step"
+                    }
+                ],
+                description: "If you control two or more exhausted \"Armored Fish\" family Spirits, put a core from the Void to your Reserve."
+            }
+        ],
+        imageUrl: "/cards/green/26RSD03-011.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 2
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-012",
+        name: "Hand Molt",
+        type: "Magic",
+        colors: [
+            "Green"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Green",
+                amount: 2
+            }
+        ],
+        symbols: [],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/green/26RSD03-012.webp",
+        mainEffect: "Return all your Hand to the deckbottom in any order. When one or more card is returned, draw a card for each card in the opposing Hand",
+        flashEffect: "Target one of your Spirits. During this turn, give it +2000 BP"
+    },
+
+    {
+        id: "26RSD03-013",
+        name: "Vortex Shave",
+        type: "Magic",
+        colors: [
+            "Green"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Green",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/green/26RSD03-013.webp",
+        mainEffect: "",
+        flashEffect: "Target an opposing Spirit. Exhaust it."
+    },
+
+    {
+        id: "26RSD03-014",
+        name: "Tentacle Attack",
+        type: "Magic",
+        colors: [
+            "Green"
+        ],
+        cost: 6,
+        reductions: [
+            {
+                color: "Green",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/green/26RSD03-014.webp",
+        mainEffect: "",
+        flashEffect: "Target an opposing Spirit. Heavy exhaust it.",
+        soulMagicConditionColor: "Green"
+    },
+
+    {
+        id: "26RSD03-X01",
+        name: "The ArmoredHands Squid",
+        type: "Spirit",
+        colors: [
+            "Green"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "Green",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Oceanic Green", "Armored Fish"
+        ],
+        rarity: [
+            "X-Rare"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "You can target an opposing exhausted Spirit. Heavy exhaust it."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    },
+                    {
+                        color: "Red",
+                        name: "Once Per Turn"
+                    }
+                ],
+                description: "At the end of battle, this Spirit can refresh."
+            }
+        ],
+        imageUrl: "/cards/green/26RSD03-X01.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 5000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 7000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD03-X02",
+        name: "The DeepNest Duntekleo",
+        type: "Spirit",
+        colors: [
+            "Green"
+        ],
+        cost: 6,
+        reductions: [
+            {
+                color: "Green",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Green",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Armored Fish"
+        ],
+        rarity: [
+            "X-Rare"
+        ],
+        hasLegacy: true,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Target up to two \"Armored Fish\" family Spirits you control. During this turn, they gain +3000 BP."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "Your Attack Step"
+                    },
+                    {
+                        color: "Purple",
+                        name: "Invoke: Flash"
+                    },
+                    {
+                        color: "Red",
+                        name: "Once Per Turn"
+                    }
+                ],
+                description: "Besides this Spirit, target an \"Armored Fish\" family Spirit you control. Refresh it."
+            }
+        ],
+        imageUrl: "/cards/green/26RSD03-X02.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 6000
+            },
+            {
+                level: 2,
+                coreCost: 4,
+                bp: 9000,
+                isTrueRelease: true
+            }
+        ]
     }
+
 ];
