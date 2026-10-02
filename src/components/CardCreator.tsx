@@ -27,17 +27,41 @@ export const CardCreator = () => {
     const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
         const { name, value } = e.target;
 
-        // When switching card type, initialize type-specific default attributes (preserve families)
+        // When switching card type, reset the template and keep only basic shared attributes
         if (name === 'type') {
-            let defaultOverrides: Record<string, any> = {};
+            const baseCardData = {
+                id: cardData.id,
+                name: cardData.name,
+                type: value as any,
+                colors: cardData.colors,
+                cost: cardData.cost,
+                reductions: cardData.reductions,
+                symbols: cardData.symbols,
+                families: cardData.families,
+                rarity: cardData.rarity,
+                hasLegacy: false,
+                effects: [],
+                imageUrl: cardData.imageUrl,
+            };
+
             if (value === 'Spirit') {
-                defaultOverrides = { levels: [{ level: 1, coreCost: 1, bp: 1000 }] };
+                setCardData({
+                    ...baseCardData,
+                    levels: [{ level: 1, coreCost: 1, bp: 1000 }]
+                } as Card);
             } else if (value === 'Nexus') {
-                defaultOverrides = { levels: [{ level: 1, coreCost: 0 }, { level: 2, coreCost: 1 }] };
+                setCardData({
+                    ...baseCardData,
+                    levels: [{ level: 1, coreCost: 0 }, { level: 2, coreCost: 1 }]
+                } as Card);
             } else if (value === 'Magic') {
-                defaultOverrides = { mainEffect: '', flashEffect: '', soulMagicConditionColor: undefined };
+                setCardData({
+                    ...baseCardData,
+                    mainEffect: '',
+                    flashEffect: '',
+                    soulMagicConditionColor: undefined
+                } as Card);
             }
-            setCardData({ ...cardData, type: value as any, ...defaultOverrides } as Card);
             return;
         }
 
