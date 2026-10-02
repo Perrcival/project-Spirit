@@ -4117,6 +4117,971 @@ export const mockCards: Card[] = [
                 isTrueRelease: true
             }
         ]
+    },
+
+    {
+        id: "26RSD06-001",
+        name: "Nausa",
+        type: "Spirit",
+        colors: [
+            "Blue"
+        ],
+        cost: 2,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 1
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Destroyed"
+                    }
+                ],
+                description: "Target a Nexus you control. Put a core from the Void to it."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-001.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 1000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 3000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-002",
+        name: "Deertora",
+        type: "Spirit",
+        colors: [
+            "Blue"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 1
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "You can reveal three cards from your decktop. Among them, add a \"Ferobeast\" family Nexus card to the Hand. Return any remaining cards to the deckbottom in any order."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-002.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 2000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 3000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-003",
+        name: "Melrak",
+        type: "Spirit",
+        colors: [
+            "Blue"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 1
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release "
+                    },
+                    {
+                        color: "Blue",
+                        name: "When Destroyed"
+                    }
+                ],
+                description: "Target an opposing Cost 3 or less Spirit. Destroy it."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-003.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 3000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 5000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-004",
+        name: "Rhiceros",
+        type: "Spirit",
+        colors: [
+            "Blue"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Cyantree",
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "During Block"
+                    },
+                    {
+                        color: "Purple",
+                        name: "Invoke: Flash"
+                    },
+                    {
+                        color: "Red",
+                        name: "Once Per Turn"
+                    }
+                ],
+                description: "Exhaust one of your \"Ferobeast\" family Nexuses ▶ During this battle, this Spirit gains +3000 BP."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    },
+                    {
+                        color: "Purple",
+                        name: "Invoke: Flash"
+                    },
+                    {
+                        color: "Red",
+                        name: "Once Per Turn"
+                    }
+                ],
+                description: "Exhaust one of your \"Ferobeast\" family Nexuses ▶ Put a core from the Void to your Trash."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-004.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 4000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 6000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-005",
+        name: "Slouth",
+        type: "Spirit",
+        colors: [
+            "Blue"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Cyantree",
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/blue/26RSD06-005.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 5000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 8000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-006",
+        name: "Svarris",
+        type: "Spirit",
+        colors: [
+            "Blue"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Draw two cards, then return two cards from your Hand to the deckbottom in any order."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-006.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 3000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 5000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-007",
+        name: "Armalido",
+        type: "Spirit",
+        colors: [
+            "Blue"
+        ],
+        cost: 6,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Cyantree",
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "During Block"
+                    },
+                    {
+                        color: "Purple",
+                        name: "Invoke: Flash"
+                    },
+                    {
+                        color: "Red",
+                        name: "Once Per Turn"
+                    }
+                ],
+                description: "Exhaust one of your \"Ferobeast\" family Nexuses ▶ During this battle, this Spirit gains +3000 BP."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-007.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 5000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 7000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-008",
+        name: "The TreeShadow Felio",
+        type: "Spirit",
+        colors: [
+            "Blue"
+        ],
+        cost: 7,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 4
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: true,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "For each Nexus you control, during this turn, this Spirit gains +1000 BP."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-008.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 7000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 8000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-009",
+        name: "The Misty Forest",
+        type: "Nexus",
+        colors: [
+            "Blue"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Your Attack Step"
+                    }
+                ],
+                description: "All your attacking \"Ferobeast\" family Spirits gain +1000 BP."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Your End Step"
+                    },
+                    {
+                        color: "Red",
+                        name: "Can't Stack"
+                    }
+                ],
+                description: "For every two Nexuses you control, you can target one \"Ferobeast\" family Spirit you control. Refresh them."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-009.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 3
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-010",
+        name: "Utmost Depth: The Extreme Giant Tree",
+        type: "Nexus",
+        colors: [
+            "Blue"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Your Main Step"
+                    }
+                ],
+                description: "If you control three or more Blue Nexuses, this Nexus gains an extra Blue symbol."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "Opposing Attack Step"
+                    }
+                ],
+                description: "When an opposing Spirit attacks, you can target one of your \"Ferobeast\" family Spirits with the same cost as that Spirit. Refresh it."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-010.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-011",
+        name: "The Barrage Forest",
+        type: "Nexus",
+        colors: [
+            "Blue"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Deployed"
+                    }
+                ],
+                description: "Target an opposing Cost 3 or less Spirit. Destroy it."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Opposing Attack Step"
+                    },
+                    {
+                        color: "Red",
+                        name: "Can't Stack"
+                    }
+                ],
+                description: "When an opposing LV1 Spirit would attack, unless the opponent pay one cost, it can't attack."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-011.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 2
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-012",
+        name: "Feeding Draw",
+        type: "Magic",
+        colors: [
+            "Blue"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 2
+            }
+        ],
+        symbols: [],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/blue/26RSD06-012.webp",
+        mainEffect: "Draw three cards, then return two cards from your Hand to the deckbottom in any order.",
+        flashEffect: "Target one of your Spirits. During this turn, give it +3000 BP."
+    },
+
+    {
+        id: "26RSD06-013",
+        name: "Stem Lance",
+        type: "Magic",
+        colors: [
+            "Blue"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/blue/26RSD06-013.webp",
+        mainEffect: "",
+        flashEffect: "Target an opposing Cost 4 or below Spirit. Destroy it. When choosing the target, you can target one of your Nexuses. Destroy it. For each cost of the Nexus destroyed, the target cost increases by +1 instead.",
+        soulMagicConditionColor: "Blue"
+    },
+
+    {
+        id: "26RSD06-014",
+        name: "Full Stomach",
+        type: "Magic",
+        colors: [
+            "Blue"
+        ],
+        cost: 6,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 4
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: true,
+        effects: [],
+        imageUrl: "/cards/blue/26RSD06-014.webp",
+        mainEffect: "Target a Nexus you or the opponent controls that isn't during True Release. Destroy it. If you've done so, draw a card.",
+        flashEffect: "Target one of your Spirits. During this turn, give it +3000 BP.",
+        soulMagicConditionColor: "Blue"
+    },
+
+    {
+        id: "26RSD06-X01",
+        name: "The ShieldHorn Gigantherion",
+        type: "Spirit",
+        colors: [
+            "Blue"
+        ],
+        cost: 8,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 4
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "X-Rare"
+        ],
+        hasLegacy: true,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Target an opposing Cost 4 or less Spirit. Destroy it. If you control three or more Nexuses, the targeting Cost becomes 6 or less instead."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    }
+                ],
+                description: "When the opponent would block, unless they exhaust a Spirit they control other than the blocking Spirit, they can't block."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-X01.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 9000
+            },
+            {
+                level: 2,
+                coreCost: 4,
+                bp: 12000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD06-X02",
+        name: "The ExtremeTree Elephas",
+        type: "Spirit",
+        colors: [
+            "Blue"
+        ],
+        cost: 10,
+        reductions: [
+            {
+                color: "Blue",
+                amount: 4
+            }
+        ],
+        symbols: [
+            {
+                color: "Blue",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Ferobeast"
+        ],
+        rarity: [
+            "X-Rare"
+        ],
+        hasLegacy: true,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    },
+                    {
+                        color: "Purple",
+                        name: "Invoke: Flash"
+                    },
+                    {
+                        color: "Red",
+                        name: "Once Per Turn"
+                    }
+                ],
+                description: "Exhaust one of your \"Ferobeast\" family Nexuses ▶ Target an opposing Cost 7 or less Spirit. Destroy it."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    }
+                ],
+                description: "When this Spirit's attack would reduce the opposing Life, reduce +1 core."
+            }
+        ],
+        imageUrl: "/cards/blue/26RSD06-X02.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 10000
+            },
+            {
+                level: 2,
+                coreCost: 4,
+                bp: 14000
+            }
+        ]
     }
 
 ];
