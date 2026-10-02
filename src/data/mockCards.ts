@@ -3198,6 +3198,925 @@ export const mockCards: Card[] = [
                 bp: 12000
             }
         ]
+    },
+
+    {
+        id: "26RSD05-001",
+        name: "Quill",
+        type: "Spirit",
+        colors: [
+            "Yellow"
+        ],
+        cost: 2,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 1
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Topaz",
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Destroyed"
+                    }
+                ],
+                description: "You can target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-001.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 1000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 2000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD05-002",
+        name: "Amaru",
+        type: "Spirit",
+        colors: [
+            "Yellow"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 1
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "You can reveal three cards from your decktop. Among them, add a \"Thunder Dragon\" family Magic card to the Hand. Return any remaining cards to the deckbottom in any order."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-002.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 2000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 3000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD05-003",
+        name: "Raniraya",
+        type: "Spirit",
+        colors: [
+            "Yellow"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Topaz",
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Destroyed"
+                    }
+                ],
+                description: "You can target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-003.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 3000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 4000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD05-004",
+        name: "Divaes",
+        type: "Spirit",
+        colors: [
+            "Yellow"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "When Attacks"
+                    }
+                ],
+                description: "Target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-004.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 4000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 6000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD05-005",
+        name: "Lucance",
+        type: "Spirit",
+        colors: [
+            "Yellow"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/yellow/26RSD05-005.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 5000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 8000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD05-006",
+        name: "Semarogue",
+        type: "Spirit",
+        colors: [
+            "Yellow"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Topaz",
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Attacks"
+                    }
+                ],
+                description: "Target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    },
+                    {
+                        color: "Red",
+                        name: "Can't Stack"
+                    }
+                ],
+                description: "When you use a \"Thunder Dragon\" family Magic card, draw a card."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-006.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 5000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 7000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD05-007",
+        name: "The SearchingThunder Pelborg",
+        type: "Spirit",
+        colors: [
+            "Yellow"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "You can reveal three cards from your decktop. Among them, add a \"Thunder Dragon\" family card, besides any \"The SearchingThunder Pelborg\", to the Hand. Return any remaining cards to the deckbottom."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-007.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 3000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 4000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD05-008",
+        name: "The CelestialThunderFist Wigil",
+        type: "Spirit",
+        colors: [
+            "Yellow"
+        ],
+        cost: 6,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "You can target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "When Attacks"
+                    }
+                ],
+                description: "You can target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-008.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 6000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 7000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD05-009",
+        name: "The Thunder Driftways",
+        type: "Nexus",
+        colors: [
+            "Yellow"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Your Attack Step"
+                    }
+                ],
+                description: "All your \"Thunder Dragon\" family Spirits can't be blocked by opposing 1000 BP or less Spirits."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Start of Your Main Step"
+                    },
+                    {
+                        color: "Red",
+                        name: " Can't Stack"
+                    }
+                ],
+                description: "If you control any exhausted \"Thunder Dragon\" family Spirit, you can target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-009.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 3
+            }
+        ]
+    },
+
+    {
+        id: "26RSD05-010",
+        name: "Utmost Depth: The Peaks of Great Thunder Mountain",
+        type: "Nexus",
+        colors: [
+            "Yellow"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Start of Opposing Attack Step"
+                    }
+                ],
+                description: "You can target a color. During this step, every opposing 1000 BP or less Spirit loses a symbol of that color."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "Your Attack Step"
+                    },
+                    {
+                        color: "Red",
+                        name: "Can't Stack • Once Per Turn"
+                    }
+                ],
+                description: "When you destroy any opposing 0 BP Spirit via your Spirit effects, draw a card."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-010.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD05-011",
+        name: "Fire Pillar",
+        type: "Magic",
+        colors: [
+            "Yellow"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 2
+            }
+        ],
+        symbols: [],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/yellow/26RSD05-011.webp",
+        mainEffect: "Draw a card.",
+        flashEffect: "Target an opposing Spirit. During this turn, give it -2000 BP. Then, destroy it if it has 0 BP."
+    },
+
+    {
+        id: "26RSD05-012",
+        name: "Rebirth Thunder",
+        type: "Magic",
+        colors: [
+            "Yellow"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 2
+            }
+        ],
+        symbols: [],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [],
+                tags: [],
+                description: "When your \"Thunder Dragon\" family Spirits are destroyed, you can return this card from the Trash to your Hand. You can only use this effect of the same card name once per turn."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-012.webp",
+        mainEffect: "",
+        flashEffect: "Target an opposing Spirit. During this turn, give it -2000 BP. Then, destroy it if it has 0 BP."
+    },
+
+    {
+        id: "26RSD05-013",
+        name: "Nestling",
+        type: "Magic",
+        colors: [
+            "Yellow"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: true,
+        effects: [],
+        imageUrl: "/cards/yellow/26RSD05-013.webp",
+        mainEffect: "Show up to two \"Thunder Dragon\" family cards from your Hand to the opponent. Return them to the deckbottom in any order. If two cards are returned, draw three cards.",
+        flashEffect: "Target one of your Spirits. During this turn, give it +3000 BP."
+    },
+
+    {
+        id: "26RSD05-014",
+        name: "Triple Thunder",
+        type: "Magic",
+        colors: [
+            "Yellow"
+        ],
+        cost: 6,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/yellow/26RSD05-014.webp",
+        mainEffect: "",
+        flashEffect: "Target an opposing Spirit. During this turn, give it -2000 BP. Then, destroy it if it's 0 BP. These happen three times.",
+        soulMagicConditionColor: "Yellow"
+    },
+
+    {
+        id: "26RSD05-X01",
+        name: "The EruptingThunder Palecoeurl",
+        type: "Spirit",
+        colors: [
+            "Yellow"
+        ],
+        cost: 7,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "X-Rare"
+        ],
+        hasLegacy: true,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    }
+                ],
+                description: "This Spirit can't be blocked by opposing 4000 BP or less Spirit."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Start of Your Attack Step"
+                    }
+                ],
+                description: "During this turn, give every opposing Spirit -2000 BP. Then, if they have 0 BP, destroy them."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-X01.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 8000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 10000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD05-X02",
+        name: "The SpellThunder Lucnas",
+        type: "Spirit",
+        colors: [
+            "Yellow"
+        ],
+        cost: 7,
+        reductions: [
+            {
+                color: "Yellow",
+                amount: 4
+            }
+        ],
+        symbols: [
+            {
+                color: "Yellow",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Thunder Dragon"
+        ],
+        rarity: [
+            "X-Rare"
+        ],
+        hasLegacy: true,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Target an opposing Spirit. During this turn, give it -4000 BP. Then, if it has 0 BP, destroy it."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "When Attacks"
+                    }
+                ],
+                description: "Target an opposing Spirit. During this turn, give it -4000 BP. Then, if it has 0 BP, destroy it."
+            }
+        ],
+        imageUrl: "/cards/yellow/26RSD05-X02.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 7000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 9000,
+                isTrueRelease: true
+            }
+        ]
     }
 
 ];
