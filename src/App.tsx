@@ -1,9 +1,9 @@
 import { useState } from 'react';
-import { mockCards } from './data/mockCards';
 import { CardView } from './components/CardView';
 import { CardCreator } from './components/CardCreator';
-import { CardModal } from './components/CardModal';
 import type { Card } from './types/cardSchema';
+import { CardGallery } from './components/CardGallery';
+
 
 function App() {
   // State for switching between Gallery and Creator (default is gallery)
@@ -50,34 +50,7 @@ function App() {
           <CardCreator />
         ) : (
           // Card Gallery Mode
-          <div className="p-8">
-            <div className="flex gap-6 flex-wrap justify-center">
-              {mockCards.map((card) => (
-                <div 
-                    key={card.id} 
-                    className="cursor-pointer hover:scale-105 transition-transform duration-200"
-                    onClick={() => setSelectedCard(card)}
-                >
-                    {card.imageUrl ? (
-                        <img 
-                            src={card.imageUrl} 
-                            alt={card.name} 
-                            className="w-[200px] h-auto rounded-xl shadow-lg border-2 border-slate-700 hover:border-amber-400" 
-                        />
-                    ) : (
-                        <div className="w-[200px] h-[280px] bg-slate-800 rounded-xl shadow-lg border-2 border-slate-700 hover:border-amber-400 flex items-center justify-center text-center p-4">
-                            <span className="text-slate-400 font-bold">{card.name}</span>
-                        </div>
-                    )}
-                </div>
-              ))}
-            </div>
-
-            {/* Modal */}
-            {selectedCard && (
-                <CardModal card={selectedCard} onClose={() => setSelectedCard(null)} />
-            )}
-          </div>
+          <CardGallery />
         )}
       </main>
 
