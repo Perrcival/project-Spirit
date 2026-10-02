@@ -2245,6 +2245,959 @@ export const mockCards: Card[] = [
                 isTrueRelease: true
             }
         ]
+    },
+
+    {
+        id: "26RSD04-001",
+        name: "Atun",
+        type: "Spirit",
+        colors: [
+            "White"
+        ],
+        cost: 2,
+        reductions: [
+            {
+                color: "White",
+                amount: 1
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "When Blocks"
+                    }
+                ],
+                description: "Target an \"Mineroid\" family Nexus you control. Put a core from the Void to it."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-001.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 1000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 3000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-002",
+        name: "Nonril",
+        type: "Spirit",
+        colors: [
+            "White"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "White",
+                amount: 1
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Put a core from the Void to your Trash."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "During Block"
+                    }
+                ],
+                description: "If you have three or more White symbols, this Spirit gains +5000 BP."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-002.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 2000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 3000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-003",
+        name: "Arsinus",
+        type: "Spirit",
+        colors: [
+            "White"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "White",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Purple",
+                        name: "Invoke: Main"
+                    }
+                ],
+                description: "Exhaust this Spirit ▶ Reveal two cards from your decktop. Among them, add a Cost 6 or more \"Mineroid\" family Spirit card to the Hand. Return any remaining cards to the deckbottom in any order."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-003.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 3000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 5000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-004",
+        name: "The HeavyClaw Forclawer",
+        type: "Spirit",
+        colors: [
+            "White"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "White",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Leucomyst",
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Start of Opposing Attack Step"
+                    },
+                    {
+                        color: "Red",
+                        name: "Can't Stack"
+                    }
+                ],
+                description: "You can target an opposing Spirit. It must attack at the start of the step if possible."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [],
+                description: "When you're summoning any Cost 6 or more \"Mineroid\" family Spirit card, this Spirit gains an extra White symbol."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-004.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 3000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 5000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-005",
+        name: "Chimeniruga",
+        type: "Spirit",
+        colors: [
+            "White"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "White",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Leucomyst",
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/white/26RSD04-005.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 5000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 8000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-006",
+        name: "Dabity",
+        type: "Spirit",
+        colors: [
+            "White"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "White",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Target a \"Mineroid\" family Spirit you control. Put a core from the Void to it."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "During Block"
+                    }
+                ],
+                description: "This Spirit gains +2000 BP."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-006.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 4000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 6000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-007",
+        name: "Junks",
+        type: "Spirit",
+        colors: [
+            "White"
+        ],
+        cost: 6,
+        reductions: [
+            {
+                color: "White",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Leucomyst",
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Your End Step"
+                    }
+                ],
+                description: "This Spirit can refresh."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "When Attacks"
+                    }
+                ],
+                description: "Target an opposing 4000 BP or less Spirit. Return it to the Hand."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-007.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 5000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 7000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-008",
+        name: "The MightyArm Anatoma",
+        type: "Spirit",
+        colors: [
+            "White"
+        ],
+        cost: 7,
+        reductions: [
+            {
+                color: "White",
+                amount: 4
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Leucomyst",
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: true,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Target an opposing 6000 BP or less Spirit. Return it to the Hand."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-008.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 7000
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                bp: 8000
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-009",
+        name: "The Quarry Plain",
+        type: "Nexus",
+        colors: [
+            "White"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "White",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Your Main Step"
+                    }
+                ],
+                description: "When you're summoning a Cost 6 or more \"Mineroid\" family Spirit card, this Nexus gains an extra White symbol."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Your End Step"
+                    }
+                ],
+                description: "You can target one of your \"Mineroid\" family Spirits. Refresh it."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-009.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 2
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-010",
+        name: "Utmost Depth: The White Heaven Plain",
+        type: "Nexus",
+        colors: [
+            "White"
+        ],
+        cost: 3,
+        reductions: [
+            {
+                color: "White",
+                amount: 2
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Opposing Attack Step"
+                    }
+                ],
+                description: "All your Cost 5 or less \"Mineroid\" family Spirits gain +1000 BP."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "Your Attack Step"
+                    }
+                ],
+                description: "When only the opposing Spirit is destroyed by comparing BP with your Cost 6 or more \"Mineroid\" family Spirits, target one of your Spirits. Put a core from the Void to it."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-010.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 2,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-011",
+        name: "The Menhir Circle",
+        type: "Nexus",
+        colors: [
+            "White"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "White",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Deployed"
+                    }
+                ],
+                description: "Show up to two White \"Mineroid\" family cards from your Hand to the opponent. Return them to the deckbottom in any order. For each card returned, draw a card."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Opposing Attack Step"
+                    },
+                    {
+                        color: "Purple",
+                        name: "Invoke: Flash"
+                    }
+                ],
+                description: "Exhaust this Nexus ▶ Target an opposing attacking 3000 BP or less Spirit. Return it to the Hand."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-011.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 0
+            },
+            {
+                level: 2,
+                coreCost: 3
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-012",
+        name: "Rock Drilling",
+        type: "Magic",
+        colors: [
+            "White"
+        ],
+        cost: 2,
+        reductions: [
+            {
+                color: "White",
+                amount: 1
+            }
+        ],
+        symbols: [],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: true,
+        effects: [],
+        imageUrl: "/cards/white/26RSD04-012.webp",
+        mainEffect: "Show up to three \"Mineroid\" family cards from your Hand to the opponent. Return them to the deckbottom in any order. For each card returned, draw a card.",
+        flashEffect: "Target one of your Spirits. During this turn, give it +3000 BP."
+    },
+
+    {
+        id: "26RSD04-013",
+        name: "Dream Rotor",
+        type: "Magic",
+        colors: [
+            "White"
+        ],
+        cost: 4,
+        reductions: [
+            {
+                color: "White",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/white/26RSD04-013.webp",
+        mainEffect: "",
+        flashEffect: "Target an opposing 5000 BP or less Spirit. Return it to the Hand."
+    },
+
+    {
+        id: "26RSD04-014",
+        name: "Defensive Gate",
+        type: "Magic",
+        colors: [
+            "White"
+        ],
+        cost: 5,
+        reductions: [
+            {
+                color: "White",
+                amount: 3
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "EX",
+                amount: 1
+            }
+        ],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "Common"
+        ],
+        hasLegacy: false,
+        effects: [],
+        imageUrl: "/cards/white/26RSD04-014.webp",
+        mainEffect: "",
+        flashEffect: "Target an opposing Spirit. During this turn, your Life can't be reduced by its attack. If your Life was reduced during this turn, change to target two instead.",
+        soulMagicConditionColor: "White"
+    },
+
+    {
+        id: "26RSD04-X01",
+        name: "The ContinentalShip Matanda",
+        type: "Spirit",
+        colors: [
+            "White"
+        ],
+        cost: 8,
+        reductions: [
+            {
+                color: "White",
+                amount: 4
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "X-Rare"
+        ],
+        hasLegacy: false,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "Your End Step"
+                    }
+                ],
+                description: "You can target up to two \"Mineroid\" family Spirits you control. Refresh them."
+            },
+            {
+                levels: [
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Orange",
+                        name: "True Release"
+                    },
+                    {
+                        color: "Blue",
+                        name: "During Attack"
+                    }
+                ],
+                description: "This Spirit can't be blocked by opposing Cost 7 or less Spirits."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-X01.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 9000
+            },
+            {
+                level: 2,
+                coreCost: 4,
+                bp: 11000,
+                isTrueRelease: true
+            }
+        ]
+    },
+
+    {
+        id: "26RSD04-X02",
+        name: "The TrueGateMinister Savatoma",
+        type: "Spirit",
+        colors: [
+            "White"
+        ],
+        cost: 9,
+        reductions: [
+            {
+                color: "White",
+                amount: 4
+            }
+        ],
+        symbols: [
+            {
+                color: "White",
+                type: "Normal",
+                amount: 1
+            }
+        ],
+        families: [
+            "Mineroid"
+        ],
+        rarity: [
+            "X-Rare"
+        ],
+        hasLegacy: true,
+        effects: [
+            {
+                levels: [
+                    1,
+                    2
+                ],
+                tags: [
+                    {
+                        color: "Blue",
+                        name: "When Summoned"
+                    }
+                ],
+                description: "Target an opposing Spirit. Return it to the Hand. If you control any exhausted \"Mineroid\" family Spirit, you can return it to the deckbottom instead."
+            }
+        ],
+        imageUrl: "/cards/white/26RSD04-X02.webp",
+        levels: [
+            {
+                level: 1,
+                coreCost: 1,
+                bp: 10000
+            },
+            {
+                level: 2,
+                coreCost: 3,
+                bp: 12000
+            }
+        ]
     }
 
 ];
