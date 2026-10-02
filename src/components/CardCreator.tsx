@@ -261,64 +261,6 @@ export const CardCreator = () => {
                         />
                     </div>
 
-                    {/* Magic Card Specific Attributes (Main & Flash Effects) */}
-                    {cardData.type === 'Magic' && (
-                        <div className="p-4 bg-slate-950 rounded-lg border border-purple-800 space-y-4 my-4">
-                            <h3 className="font-bold text-purple-400 mb-2">Magic Card Effects</h3>
-
-                            {/* Soul Magic Color (Optional) */}
-                            <div>
-                                <label className="block text-sm font-semibold mb-1 text-slate-400">
-                                    Soul Magic Condition Color (Optional)
-                                </label>
-                                <select
-                                    name="soulMagicConditionColor"
-                                    value={(cardData as any).soulMagicConditionColor || ''}
-                                    onChange={handleChange}
-                                    className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white cursor-pointer"
-                                >
-                                    <option value="">None</option>
-                                    <option value="Red">Red</option>
-                                    <option value="Purple">Purple</option>
-                                    <option value="Green">Green</option>
-                                    <option value="White">White</option>
-                                    <option value="Yellow">Yellow</option>
-                                    <option value="Blue">Blue</option>
-                                </select>
-                            </div>
-
-                            {/* Main Effect */}
-                            <div>
-                                <div className="flex items-center gap-2 mb-1">
-                                    <span className="bg-blue-600 text-white text-xs px-2 py-0.5 rounded font-bold">Main</span>
-                                    <label className="text-sm font-semibold text-slate-300">Main Effect</label>
-                                </div>
-                                <textarea
-                                    name="mainEffect"
-                                    value={(cardData as any).mainEffect || ''}
-                                    onChange={handleChange}
-                                    placeholder="Enter Main Step effect..."
-                                    className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white h-20 resize-none focus:border-blue-400"
-                                />
-                            </div>
-
-                            {/* Flash Effect */}
-                            <div>
-                                <div className="flex items-center gap-2 mb-1">
-                                    <span className="bg-amber-600 text-white text-xs px-2 py-0.5 rounded font-bold">Flash</span>
-                                    <label className="text-sm font-semibold text-slate-300">Flash Effect</label>
-                                </div>
-                                <textarea
-                                    name="flashEffect"
-                                    value={(cardData as any).flashEffect || ''}
-                                    onChange={handleChange}
-                                    placeholder="Enter Flash timing effect..."
-                                    className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white h-20 resize-none focus:border-amber-400"
-                                />
-                            </div>
-                        </div>
-                    )}
-
                     {/* Reductions Section */}
                     <div className="p-4 bg-slate-900 rounded-lg border border-slate-700 space-y-3 mt-4">
                         <div className="flex justify-between items-center">
@@ -531,6 +473,64 @@ export const CardCreator = () => {
                                 />
                             </div>
                         </details>
+                    )}
+
+                    {/* Magic Card Specific Attributes (Main & Flash Effects) */}
+                    {cardData.type === 'Magic' && (
+                        <div className="p-4 bg-slate-950 rounded-lg border border-purple-800 space-y-4 my-4">
+                            <h3 className="font-bold text-purple-400 mb-2">Magic Card Effects</h3>
+
+                            {/* Soul Magic Color (Optional) */}
+                            <div>
+                                <label className="block text-sm font-semibold mb-1 text-slate-400">
+                                    Soul Magic Condition Color (Optional)
+                                </label>
+                                <select
+                                    name="soulMagicConditionColor"
+                                    value={(cardData as any).soulMagicConditionColor || ''}
+                                    onChange={handleChange}
+                                    className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white cursor-pointer"
+                                >
+                                    <option value="">None</option>
+                                    <option value="Red">Red</option>
+                                    <option value="Purple">Purple</option>
+                                    <option value="Green">Green</option>
+                                    <option value="White">White</option>
+                                    <option value="Yellow">Yellow</option>
+                                    <option value="Blue">Blue</option>
+                                </select>
+                            </div>
+
+                            {/* Main Effect */}
+                            <div>
+                                <div className="flex items-center gap-2 mb-1">
+                                    <span className="bg-blue-600 text-white text-xs px-2 py-0.5 rounded font-bold">Main</span>
+                                    <label className="text-sm font-semibold text-slate-300">Main Effect</label>
+                                </div>
+                                <textarea
+                                    name="mainEffect"
+                                    value={(cardData as any).mainEffect || ''}
+                                    onChange={handleChange}
+                                    placeholder="Enter Main Step effect..."
+                                    className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white h-20 resize-none focus:border-blue-400"
+                                />
+                            </div>
+
+                            {/* Flash Effect */}
+                            <div>
+                                <div className="flex items-center gap-2 mb-1">
+                                    <span className="bg-amber-600 text-white text-xs px-2 py-0.5 rounded font-bold">Flash</span>
+                                    <label className="text-sm font-semibold text-slate-300">Flash Effect</label>
+                                </div>
+                                <textarea
+                                    name="flashEffect"
+                                    value={(cardData as any).flashEffect || ''}
+                                    onChange={handleChange}
+                                    placeholder="Enter Flash timing effect..."
+                                    className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white h-20 resize-none focus:border-amber-400"
+                                />
+                            </div>
+                        </div>
                     )}
 
                     {/* Image URL */}
