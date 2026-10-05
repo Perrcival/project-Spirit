@@ -9,6 +9,7 @@ type Rarity = 'Common' | 'Rare' | 'Master Rare' | 'X-Rare' | 'PR';
 export interface CardSymbol {
     color: Color;
     type: SymbolType;
+    amount?: number;
 }
 
 // Level Schema
@@ -25,6 +26,19 @@ export interface Reduction {
     amount: number;
 }
 
+// Effect Schema
+export type EffectTagColor = 'Orange' | 'Black' | 'Blue' | 'Purple' | 'Red';
+
+export interface EffectTag {
+    color: EffectTagColor;
+    name: string;
+}
+
+export interface CardEffect {
+    levels?: number[]; // ex. [1, 2, 3] (? for magic card skip it)
+    tags: EffectTag[];
+    description: string;
+}
 // Base Card Schema (for all cards)
 export interface BaseCard {
     id: string;
@@ -34,17 +48,16 @@ export interface BaseCard {
     cost: number;
     reductions: Reduction[];
     symbols: CardSymbol[];
+    families: string[];
     hasLegacy?: boolean;
     rarity: Rarity[];
-    effects: string[];
-    flavorText?: string;
+    effects: (string | CardEffect)[];
     imageUrl?: string;
 }
 
 // Spirit Card Schema
 export interface SpiritCard extends BaseCard {
     type: 'Spirit';
-    families: string[];
     levels: CardLevel[];
 }
 
@@ -58,8 +71,10 @@ export interface NexusCard extends BaseCard {
 export interface MagicCard extends BaseCard {
     type: 'Magic';
     soulMagicConditionColor?: Color;
-    mainEffect?: string;
-    flashEffect?: string;
+    isMain?: boolean;
+    isFlash?: boolean;
+    mainEffect?: string | CardEffect;
+    flashEffect?: string | CardEffect;
 }
 
 // Combine all card type to single name for simpler calls

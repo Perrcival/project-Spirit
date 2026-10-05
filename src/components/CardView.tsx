@@ -37,6 +37,21 @@ export const CardView: React.FC<CardViewProps> = ({ card, hideImage = false }) =
             gap: '8px',
             color: '#1f2937'
         }}>
+
+            {/* รูปภาพการ์ด */}
+            {!hideImage && card.imageUrl && (
+                <img
+                    src={card.imageUrl}
+                    alt={card.name}
+                    style={{
+                        width: '100%',
+                        height: '100%',
+                        objectFit: 'cover',
+                        borderRadius: '6px'
+                    }}
+                />
+            )}
+
             {/* Header: ID, Name, Cost */}
             <div style={{
                 display: 'flex',
@@ -67,7 +82,8 @@ export const CardView: React.FC<CardViewProps> = ({ card, hideImage = false }) =
                 </span>
             </div>
 
-            {/* Badges: Type, Rarity, Gimmicks */}
+
+            {/* Badges: Type, Rarity, Gimmicks, Families */}
             <div style={{ display: 'flex', gap: '4px', flexWrap: 'wrap', fontSize: '10px' }}>
                 <span style={{ backgroundColor: '#000', color: '#fff', padding: '2px 6px', borderRadius: '4px' }}>
                     {card.type}
@@ -85,16 +101,13 @@ export const CardView: React.FC<CardViewProps> = ({ card, hideImage = false }) =
                         SOUL MAGIC ({card.soulMagicConditionColor})
                     </span>
                 )}
+                {card.families && card.families.length > 0 && (
+                    <span style={{ backgroundColor: '#334155', color: '#93c5fd', padding: '2px 6px', borderRadius: '4px' }}>
+                        {card.families.join(' / ')}
+                    </span>
+                )}
             </div>
 
-            {/* รูปภาพการ์ด */}
-            {!hideImage && card.imageUrl && (
-                <img
-                    src={card.imageUrl}
-                    alt={card.name}
-                    style={{ width: '100%', height: '150px', objectFit: 'cover', borderRadius: '6px' }}
-                />
-            )}
 
             {/* Reductions & Symbols */}
             <div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#374151' }}>
@@ -115,7 +128,7 @@ export const CardView: React.FC<CardViewProps> = ({ card, hideImage = false }) =
             </div>
 
             {/* ตาราง Levels (กรณีที่เป็น Spirit หรือ Nexus) */}
-            {'levels' in card && card.levels && (
+            {card.type !== 'Magic' && card.levels && (
                 <div style={{ backgroundColor: '#fff', padding: '6px', borderRadius: '6px', fontSize: '11px' }}>
                     {card.levels.map((lvl) => (
                         <div key={lvl.level} style={{ display: 'flex', justifyContent: 'space-between', borderBottom: '1px dashed #e5e7eb', padding: '2px 0' }}>
@@ -131,9 +144,69 @@ export const CardView: React.FC<CardViewProps> = ({ card, hideImage = false }) =
 
             {/* เอฟเฟกต์ของการ์ด */}
             <div style={{ backgroundColor: '#fff', padding: '8px', borderRadius: '6px', fontSize: '11px', flex: 1, minHeight: '60px', overflowY: 'auto' }}>
-                {card.effects.map((eff, i) => (
-                    <p key={i} style={{ margin: '0 0 4px 0', lineHeight: '1.3' }}>{eff}</p>
-                ))}
+
+                {/* General Effects (Spirit, Nexus, or extra Magic effects) */}
+                {card.effects && card.effects.map((eff, i) => {
+                    if (typeof eff === 'string') {
+                        // old effect format
+                        return (
+                            <p key={i} style={{ margin: '0 0 4px 0', lineHeight: '1.3' }}>{eff}</p>
+                        )
+                    }
+
+                    // new effect format
+                    return (
+                        <div key={i} style={{ margin: '0 0 8px 0', lineHeight: '1.4' }}>
+                            {eff.levels && eff.levels.length > 0 && (
+                                <span style={{ fontWeight: 'bold', marginRight: '4px' }}>
+                                    [LV{eff.levels.join('-')}]
+                                </span>
+                            )}
+                            {eff.tags && eff.tags.map((tag, tIndex) => {
+                                const tagColors: Record<string, string> = {
+                                    Orange: '#fbbf24',
+                                    Black: '#4b5563',
+                                    Blue: '#3b82f6',
+                                    Purple: '#a855f7',
+                                    Red: '#ef4444'
+                                };
+                                return (
+                                    <span key={tIndex} style={{
+                                        backgroundColor: tagColors[tag.color] || '#64748b',
+                                        color: '#fff',
+                                        padding: '1px 4px',
+                                        borderRadius: '4px',
+                                        marginRight: '4px',
+                                        fontSize: '9px'
+                                    }}>
+                                        {tag.name}
+                                    </span>
+                                );
+                            })}
+                            <span>{eff.description}</span>
+                        </div>
+                    );
+                })}
+
+                {/* Magic Card: Main Effect */}
+                {card.type === 'Magic' && card.mainEffect && (
+                    <div style={{ margin: '0 0 6px 0', lineHeight: '1.4' }}>
+                        <span style={{ backgroundColor: '#2563eb', color: '#fff', padding: '1px 5px', borderRadius: '4px', marginRight: '6px', fontSize: '9px', fontWeight: 'bold' }}>
+                            [Main]
+                        </span>
+                        <span>{typeof card.mainEffect === 'string' ? card.mainEffect : card.mainEffect.description}</span>
+                    </div>
+                )}
+
+                {/* Magic Card: Flash Effect */}
+                {card.type === 'Magic' && card.flashEffect && (
+                    <div style={{ margin: '0 0 6px 0', lineHeight: '1.4' }}>
+                        <span style={{ backgroundColor: '#d97706', color: '#fff', padding: '1px 5px', borderRadius: '4px', marginRight: '6px', fontSize: '9px', fontWeight: 'bold' }}>
+                            [Flash]
+                        </span>
+                        <span>{typeof card.flashEffect === 'string' ? card.flashEffect : card.flashEffect.description}</span>
+                    </div>
+                )}
             </div>
         </div>
     );
