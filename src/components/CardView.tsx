@@ -192,7 +192,7 @@ export const CardView: React.FC<CardViewProps> = ({ card, hideImage = false }) =
                 {card.type === 'Magic' && card.mainEffect && (
                     <div style={{ margin: '0 0 6px 0', lineHeight: '1.4' }}>
                         <span style={{ backgroundColor: '#2563eb', color: '#fff', padding: '1px 5px', borderRadius: '4px', marginRight: '6px', fontSize: '9px', fontWeight: 'bold' }}>
-                            [Main]
+                            Main
                         </span>
                         <span>{typeof card.mainEffect === 'string' ? card.mainEffect : card.mainEffect.description}</span>
                     </div>
@@ -201,8 +201,8 @@ export const CardView: React.FC<CardViewProps> = ({ card, hideImage = false }) =
                 {/* Magic Card: Flash Effect */}
                 {card.type === 'Magic' && card.flashEffect && (
                     <div style={{ margin: '0 0 6px 0', lineHeight: '1.4' }}>
-                        <span style={{ backgroundColor: '#d97706', color: '#fff', padding: '1px 5px', borderRadius: '4px', marginRight: '6px', fontSize: '9px', fontWeight: 'bold' }}>
-                            [Flash]
+                        <span style={{ backgroundColor: '#edc001', color: '#fff', padding: '1px 5px', borderRadius: '4px', marginRight: '6px', fontSize: '9px', fontWeight: 'bold' }}>
+                            Flash
                         </span>
                         <span>{typeof card.flashEffect === 'string' ? card.flashEffect : card.flashEffect.description}</span>
                     </div>
