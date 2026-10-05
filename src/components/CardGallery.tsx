@@ -105,10 +105,10 @@ export const CardGallery = () => {
                             <img
                                 src={card.imageUrl}
                                 alt={card.name}
-                                className="w-[200px] h-[280px] object-cover rounded-xl shadow-lg border-2 border-slate-700 group-hover:border-cyan-400 bg-slate-950"
+                                className="w-[220px] h-[320px] object-cover rounded-xl shadow-lg border-2 border-slate-700 group-hover:border-cyan-400 bg-slate-950"
                             />
                         ) : (
-                            <div className="w-[200px] h-[280px] bg-slate-800 rounded-xl shadow-lg border-2 border-slate-700 group-hover:border-cyan-400 flex items-center justify-center text-center p-4">
+                            <div className="w-[220px] h-[320px] bg-slate-800 rounded-xl shadow-lg border-2 border-slate-700 group-hover:border-cyan-400 flex items-center justify-center text-center p-4">
                                 <span className="text-slate-400 font-bold">{card.name}</span>
                             </div>
                         )}
