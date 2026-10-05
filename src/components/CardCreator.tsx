@@ -18,6 +18,7 @@ export const CardCreator = () => {
         hasLegacy: false,
         effects: [],
         imageUrl: '',
+        levels: [{ level: 1, coreCost: 1, bp: 1000 }],
     } as Card);
 
     // 1.5 Local state for families input to prevent comma deletion issue

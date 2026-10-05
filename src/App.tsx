@@ -1,14 +1,11 @@
 import { useState } from 'react';
-import { CardView } from './components/CardView';
 import { CardCreator } from './components/CardCreator';
-import type { Card } from './types/cardSchema';
 import { CardGallery } from './components/CardGallery';
 
 
 function App() {
   // State for switching between Gallery and Creator (default is gallery)
   const [viewMode, setViewMode] = useState<'gallery' | 'creator'>('gallery');
-  const [selectedCard, setSelectedCard] = useState<Card | null>(null);
 
   return (
     <div className="min-h-screen bg-slate-900 font-sans text-slate-200">

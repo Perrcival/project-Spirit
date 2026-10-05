@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import { useState, useMemo } from 'react';
 import { CardModal } from './CardModal';
 import { mockCards } from '../data/mockCards';
 import type { Card } from '../types/cardSchema';
