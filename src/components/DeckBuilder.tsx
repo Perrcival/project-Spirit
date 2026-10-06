@@ -1,4 +1,4 @@
-import { useState, useMemo } from 'react';
+import { useState, useMemo, useEffect } from 'react';
 import { mockCards } from '../data/mockCards';
 import type { Card } from '../types/cardSchema';
 import { CardModal } from './CardModal';
@@ -9,8 +9,17 @@ interface DeckEntry {
     count: number;
 }
 
+interface SavedDeck {
+    id: string;
+    name: string;
+    cards: { id: string; count: number }[];
+}
+
 export const DeckBuilder = () => {
     const [deck, setDeck] = useState<DeckEntry[]>([]);
+    const [deckName, setDeckName] = useState('My New Deck');
+    const [savedDecks, setSavedDecks] = useState<SavedDeck[]>([]);
+    const [currentDeckId, setCurrentDeckId] = useState<string | null>(null);
     const [selectedCard, setSelectedCard] = useState<Card | null>(null);
     const [searchTerm, setSearchTerm] = useState('');
     const [filterColor, setFilterColor] = useState('All');
@@ -63,6 +72,86 @@ export const DeckBuilder = () => {
         });
     };
 
+    // Save Deck to LocalStorage
+    const saveDeck = () => {
+        if (deck.length === 0) {
+            alert("Cannot save an empty deck!");
+            return;
+        }
+        const deckData = deck.map(entry => ({ id: entry.card.id, count: entry.count }));
+        
+        let newSavedDecks = [...savedDecks];
+        let deckId = currentDeckId;
+        
+        if (!deckId) {
+            deckId = Date.now().toString();
+            setCurrentDeckId(deckId);
+            newSavedDecks.push({ id: deckId, name: deckName || "Untitled Deck", cards: deckData });
+        } else {
+            newSavedDecks = newSavedDecks.map(sd => 
+                sd.id === deckId ? { ...sd, name: deckName || "Untitled Deck", cards: deckData } : sd
+            );
+        }
+        
+        setSavedDecks(newSavedDecks);
+        localStorage.setItem('savedDecksList', JSON.stringify(newSavedDecks));
+        alert('Deck saved successfully! 💾');
+    };
+
+    // Load Deck List on mount
+    useEffect(() => {
+        const saved = localStorage.getItem('savedDecksList');
+        if (saved) {
+            try {
+                const parsed = JSON.parse(saved);
+                setSavedDecks(parsed);
+            } catch (e) {
+                console.error("Failed to load decks", e);
+            }
+        }
+    }, []);
+
+    // Load specific deck
+    const loadSpecificDeck = (deckId: string) => {
+        if (!deckId) {
+            // New deck
+            setCurrentDeckId(null);
+            setDeckName('My New Deck');
+            setDeck([]);
+            return;
+        }
+        
+        const targetDeck = savedDecks.find(d => d.id === deckId);
+        if (targetDeck) {
+            setCurrentDeckId(targetDeck.id);
+            setDeckName(targetDeck.name);
+            const newDeck: DeckEntry[] = [];
+            targetDeck.cards.forEach(item => {
+                const card = mockCards.find(c => c.id === item.id);
+                if (card) newDeck.push({ card, count: item.count });
+            });
+            setDeck(newDeck);
+        }
+    };
+
+    const deleteDeck = () => {
+        if (currentDeckId && confirm("Are you sure you want to delete this deck permanently?")) {
+            const newSavedDecks = savedDecks.filter(d => d.id !== currentDeckId);
+            setSavedDecks(newSavedDecks);
+            localStorage.setItem('savedDecksList', JSON.stringify(newSavedDecks));
+            setCurrentDeckId(null);
+            setDeckName('My New Deck');
+            setDeck([]);
+        }
+    };
+
+    // Clear current board
+    const clearDeck = () => {
+        if (confirm("Are you sure you want to clear your current deck board?")) {
+            setDeck([]);
+        }
+    };
+
     return (
         <div className="p-4 max-w-[2000px] mx-auto h-[calc(100vh-80px)] flex gap-4 overflow-hidden flex-col md:flex-row">
             {/* Library Panel (Left) */}
@@ -112,11 +201,33 @@ export const DeckBuilder = () => {
 
             {/* Deck List Panel (Right) */}
             <div className="flex-[1] bg-slate-800 rounded-xl border border-slate-700 flex flex-col overflow-hidden min-w-[300px] shadow-lg">
-                <div className="p-4 bg-slate-900 border-b border-slate-700 flex justify-between items-center shadow-sm z-10">
-                    <h2 className="font-bold text-amber-400">My Deck</h2>
-                    <span className={`px-3 py-1 rounded-full text-sm font-bold border ${totalCards >= 40 ? 'bg-emerald-900/50 border-emerald-500 text-emerald-400' : 'bg-slate-800 border-slate-600 text-slate-300'}`}>
-                        {totalCards} / 40+
-                    </span>
+                <div className="p-4 bg-slate-900 border-b border-slate-700 flex flex-col gap-3 shadow-sm z-10">
+                    <div className="flex justify-between items-center">
+                        <input 
+                            value={deckName} 
+                            onChange={e => setDeckName(e.target.value)} 
+                            placeholder="Deck Name" 
+                            className="bg-slate-800 text-white font-bold px-3 py-1.5 rounded border border-slate-700 focus:border-amber-400 outline-none w-2/3"
+                        />
+                        <span className={`px-3 py-1.5 rounded-full text-sm font-bold border ${totalCards >= 40 ? 'bg-emerald-900/50 border-emerald-500 text-emerald-400' : 'bg-slate-800 border-slate-600 text-slate-300'}`}>
+                            {totalCards} / 40+
+                        </span>
+                    </div>
+                    <div className="flex gap-2">
+                        <select 
+                            onChange={(e) => loadSpecificDeck(e.target.value)} 
+                            value={currentDeckId || ""}
+                            className="flex-1 bg-slate-800 text-sm text-white px-2 py-1.5 rounded border border-slate-700 outline-none cursor-pointer"
+                        >
+                            <option value="">-- Create New Deck --</option>
+                            {savedDecks.map(sd => (
+                                <option key={sd.id} value={sd.id}>{sd.name}</option>
+                            ))}
+                        </select>
+                        <button onClick={saveDeck} className="bg-indigo-600 hover:bg-indigo-500 text-white px-4 py-1.5 rounded text-sm font-bold shadow transition-colors flex items-center gap-1">
+                            💾 Save
+                        </button>
+                    </div>
                 </div>
 
                 <div className="flex-1 overflow-y-auto p-3 grid grid-cols-2 xl:grid-cols-3 gap-4 content-start">
@@ -159,10 +270,15 @@ export const DeckBuilder = () => {
                     )}
                 </div>
 
-                <div className="p-4 bg-slate-900 border-t border-slate-700">
-                    <button className="w-full py-3 bg-indigo-600 hover:bg-indigo-500 text-white font-bold rounded-lg shadow transition-colors cursor-pointer flex justify-center items-center gap-2">
-                        💾 Save Deck (Coming Soon)
+                <div className="p-4 bg-slate-900 border-t border-slate-700 flex gap-2">
+                    <button onClick={clearDeck} className="flex-1 py-3 bg-slate-800 hover:bg-slate-700 text-white font-bold rounded-lg shadow transition-colors border border-slate-700">
+                        ✨ Clear Board
                     </button>
+                    {currentDeckId && (
+                        <button onClick={deleteDeck} className="flex-1 py-3 bg-red-900/50 hover:bg-red-600 text-red-200 font-bold rounded-lg shadow transition-colors border border-red-800">
+                            🗑️ Delete Deck
+                        </button>
+                    )}
                 </div>
             </div>
 
