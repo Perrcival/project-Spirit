@@ -49,7 +49,7 @@ export const CardGallery = () => {
     return (
         <div className="p-6 max-w-7xl mx-auto">
             {/* Control Panel (Filter/Sort) */}
-            <CardFilter 
+            <CardFilter
                 searchTerm={searchTerm} setSearchTerm={setSearchTerm}
                 filterColor={filterColor} setFilterColor={setFilterColor}
                 filterType={filterType} setFilterType={setFilterType}
@@ -69,10 +69,10 @@ export const CardGallery = () => {
                             <img
                                 src={card.imageUrl}
                                 alt={card.name}
-                                className="w-[220px] h-[320px] object-cover rounded-xl shadow-lg border-2 border-slate-700 group-hover:border-cyan-400 bg-slate-950"
+                                className="w-[220px] h-[320px] object-cover rounded-xl shadow-lg border-2 border-slate-700 group-hover:border-amber-400 bg-slate-950"
                             />
                         ) : (
-                            <div className="w-[220px] h-[320px] bg-slate-800 rounded-xl shadow-lg border-2 border-slate-700 group-hover:border-cyan-400 flex items-center justify-center text-center p-4">
+                            <div className="w-[220px] h-[320px] bg-slate-800 rounded-xl shadow-lg border-2 border-slate-700 group-hover:border-amber-400 flex items-center justify-center text-center p-4">
                                 <span className="text-slate-400 font-bold">{card.name}</span>
                             </div>
                         )}

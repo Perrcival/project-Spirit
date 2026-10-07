@@ -177,9 +177,9 @@ export const DeckBuilder = () => {
                                 className={`cursor-pointer hover:-translate-y-1 transition-transform group relative w-[220px] h-[320px] ${inDeckCount >= 3 ? 'opacity-50 grayscale-[50%]' : ''}`}
                             >
                                 {card.imageUrl ? (
-                                    <img src={card.imageUrl} alt={card.name} className={`w-[220px] h-[320px] object-cover rounded-xl shadow-lg border-2 ${inDeckCount > 0 ? 'border-emerald-500' : 'border-slate-700 group-hover:border-emerald-400'}`} />
+                                    <img src={card.imageUrl} alt={card.name} className={`w-[220px] h-[320px] object-cover rounded-xl shadow-lg border-2 ${inDeckCount > 0 ? 'border-emerald-500' : 'border-slate-700 group-hover:border-amber-400'}`} />
                                 ) : (
-                                    <div className={`w-[220px] h-[320px] bg-slate-900 rounded-xl shadow-lg border ${inDeckCount > 0 ? 'border-emerald-500' : 'border-slate-700 group-hover:border-emerald-400'} flex items-center justify-center p-2 text-center text-xs font-semibold text-slate-400`}>
+                                    <div className={`w-[220px] h-[320px] bg-slate-900 rounded-xl shadow-lg border ${inDeckCount > 0 ? 'border-emerald-500' : 'border-slate-700 group-hover:border-amber-400'} flex items-center justify-center p-2 text-center text-xs font-semibold text-slate-400`}>
                                         {card.name}
                                     </div>
                                 )}
