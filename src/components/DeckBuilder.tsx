@@ -39,7 +39,7 @@ export const DeckBuilder = () => {
         if (filterType !== 'All') {
             result = result.filter(c => c.type === filterType);
         }
-        
+
         result = [...result].sort((a, b) => {
             if (sortBy === 'cost') return a.cost - b.cost;
             return a.id.localeCompare(b.id);
@@ -79,20 +79,20 @@ export const DeckBuilder = () => {
             return;
         }
         const deckData = deck.map(entry => ({ id: entry.card.id, count: entry.count }));
-        
+
         let newSavedDecks = [...savedDecks];
         let deckId = currentDeckId;
-        
+
         if (!deckId) {
             deckId = Date.now().toString();
             setCurrentDeckId(deckId);
             newSavedDecks.push({ id: deckId, name: deckName || "Untitled Deck", cards: deckData });
         } else {
-            newSavedDecks = newSavedDecks.map(sd => 
+            newSavedDecks = newSavedDecks.map(sd =>
                 sd.id === deckId ? { ...sd, name: deckName || "Untitled Deck", cards: deckData } : sd
             );
         }
-        
+
         setSavedDecks(newSavedDecks);
         localStorage.setItem('savedDecksList', JSON.stringify(newSavedDecks));
         alert('Deck saved successfully! 💾');
@@ -120,7 +120,7 @@ export const DeckBuilder = () => {
             setDeck([]);
             return;
         }
-        
+
         const targetDeck = savedDecks.find(d => d.id === deckId);
         if (targetDeck) {
             setCurrentDeckId(targetDeck.id);
@@ -158,7 +158,7 @@ export const DeckBuilder = () => {
             <div className="flex-[2] bg-slate-800 rounded-xl border border-slate-700 flex flex-col overflow-hidden">
                 <div className="p-4 bg-slate-900 border-b border-slate-700 flex flex-wrap gap-4 items-center justify-between">
                     <h2 className="font-bold text-slate-300">Card Library</h2>
-                    <CardFilter 
+                    <CardFilter
                         searchTerm={searchTerm} setSearchTerm={setSearchTerm}
                         filterColor={filterColor} setFilterColor={setFilterColor}
                         filterType={filterType} setFilterType={setFilterType}
@@ -168,31 +168,41 @@ export const DeckBuilder = () => {
                 </div>
 
                 <div className="flex-1 overflow-y-auto p-4 grid grid-cols-3 sm:grid-cols-4 lg:grid-cols-5 gap-4 justify-items-center">
-                    {filteredLibrary.map(card => (
-                        <div
-                            key={card.id}
-                            onClick={() => addCard(card)}
-                            className="cursor-pointer hover:-translate-y-1 transition-transform group relative w-[220px] h-[320px]"
-                        >
-                            {card.imageUrl ? (
-                                <img src={card.imageUrl} alt={card.name} className="w-[220px] h-[320px] object-cover rounded-xl shadow-lg border-2 border-slate-700 group-hover:border-emerald-400" />
-                            ) : (
-                                <div className="w-[220px] h-[320px] bg-slate-900 rounded-xl shadow-lg border border-slate-700 group-hover:border-emerald-400 flex items-center justify-center p-2 text-center text-xs font-semibold text-slate-400">
-                                    {card.name}
-                                </div>
-                            )}
-                            <div className="absolute top-1 right-1 bg-black/80 text-emerald-400 font-bold text-xs px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity shadow pointer-events-none">
-                                +
-                            </div>
-                            <button
-                                onClick={(e) => { e.stopPropagation(); setSelectedCard(card); }}
-                                className="absolute bottom-3 right-3 w-20 h-7 bg-amber-600/90 hover:bg-amber-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg z-10 cursor-pointer flex items-center justify-center text-sm font-bold border-2 border-slate-900"
-                                title="View Details"
+                    {filteredLibrary.map(card => {
+                        const inDeckCount = deck.find(e => e.card.id === card.id)?.count || 0;
+                        return (
+                            <div
+                                key={card.id}
+                                onClick={() => addCard(card)}
+                                className={`cursor-pointer hover:-translate-y-1 transition-transform group relative w-[220px] h-[320px] ${inDeckCount >= 3 ? 'opacity-50 grayscale-[50%]' : ''}`}
                             >
-                                expand
-                            </button>
-                        </div>
-                    ))}
+                                {card.imageUrl ? (
+                                    <img src={card.imageUrl} alt={card.name} className={`w-[220px] h-[320px] object-cover rounded-xl shadow-lg border-2 ${inDeckCount > 0 ? 'border-emerald-500' : 'border-slate-700 group-hover:border-emerald-400'}`} />
+                                ) : (
+                                    <div className={`w-[220px] h-[320px] bg-slate-900 rounded-xl shadow-lg border ${inDeckCount > 0 ? 'border-emerald-500' : 'border-slate-700 group-hover:border-emerald-400'} flex items-center justify-center p-2 text-center text-xs font-semibold text-slate-400`}>
+                                        {card.name}
+                                    </div>
+                                )}
+
+                                {inDeckCount > 0 && (
+                                    <div className="absolute top-2 left-2 bg-emerald-600 text-white font-bold text-xs px-2 py-1 rounded-full shadow-lg border border-emerald-400 z-10">
+                                        {inDeckCount} / 3
+                                    </div>
+                                )}
+
+                                <div className="absolute top-1 right-1 bg-black/80 text-emerald-400 font-bold text-xs px-1.5 py-0.5 rounded opacity-0 group-hover:opacity-100 transition-opacity shadow pointer-events-none z-10">
+                                    +
+                                </div>
+                                <button
+                                    onClick={(e) => { e.stopPropagation(); setSelectedCard(card); }}
+                                    className="absolute bottom-3 right-3 w-20 h-7 bg-amber-600/90 hover:bg-amber-500 text-white rounded-full opacity-0 group-hover:opacity-100 transition-opacity shadow-lg z-10 cursor-pointer flex items-center justify-center text-sm font-bold border-2 border-slate-900"
+                                    title="View Details"
+                                >
+                                    expand
+                                </button>
+                            </div>
+                        );
+                    })}
                     {filteredLibrary.length === 0 && (
                         <div className="col-span-full py-8 text-slate-500 font-bold">No cards found.</div>
                     )}
@@ -203,10 +213,10 @@ export const DeckBuilder = () => {
             <div className="flex-[1] bg-slate-800 rounded-xl border border-slate-700 flex flex-col overflow-hidden min-w-[300px] shadow-lg">
                 <div className="p-4 bg-slate-900 border-b border-slate-700 flex flex-col gap-3 shadow-sm z-10">
                     <div className="flex justify-between items-center">
-                        <input 
-                            value={deckName} 
-                            onChange={e => setDeckName(e.target.value)} 
-                            placeholder="Deck Name" 
+                        <input
+                            value={deckName}
+                            onChange={e => setDeckName(e.target.value)}
+                            placeholder="Deck Name"
                             className="bg-slate-800 text-white font-bold px-3 py-1.5 rounded border border-slate-700 focus:border-amber-400 outline-none w-2/3"
                         />
                         <span className={`px-3 py-1.5 rounded-full text-sm font-bold border ${totalCards >= 40 ? 'bg-emerald-900/50 border-emerald-500 text-emerald-400' : 'bg-slate-800 border-slate-600 text-slate-300'}`}>
@@ -214,8 +224,8 @@ export const DeckBuilder = () => {
                         </span>
                     </div>
                     <div className="flex gap-2">
-                        <select 
-                            onChange={(e) => loadSpecificDeck(e.target.value)} 
+                        <select
+                            onChange={(e) => loadSpecificDeck(e.target.value)}
                             value={currentDeckId || ""}
                             className="flex-1 bg-slate-800 text-sm text-white px-2 py-1.5 rounded border border-slate-700 outline-none cursor-pointer"
                         >
