@@ -16,29 +16,29 @@ function App() {
         <div className="max-w-7xl mx-auto flex justify-between items-center flex-wrap gap-4">
 
           <div>
-            <h1 className="text-xl md:text-2xl font-bold text-amber-400 m-0">Battle Spirits Web Simulator</h1>
-            <p className="text-slate-400 text-sm m-0">Standard Format (26RSD01 onwards)</p>
+            <h1 className="text-xl md:text-2xl font-bold text-amber-400 m-0">Battle GATE</h1>
+            <p className="text-slate-400 text-sm m-0">Battle Spirit - Standard Format</p>
           </div>
 
           {/* Toggle UI */}
           <div className="flex bg-slate-800 p-1 rounded-lg border border-slate-700">
             <button
               onClick={() => setViewMode('gallery')}
-              className={`px-4 py-2 rounded-md text-sm font-semibold transition cursor-pointer ${viewMode === 'gallery' ? 'bg-cyan-600 text-white shadow' : 'text-slate-400 hover:text-white'
+              className={`px-4 py-2 rounded-md text-sm font-semibold transition cursor-pointer ${viewMode === 'gallery' ? 'bg-red-700 text-white shadow' : 'text-slate-400 hover:text-white'
                 }`}
             >
               Card Gallery
             </button>
             <button
               onClick={() => setViewMode('deckBuilder')}
-              className={`px-4 py-2 rounded-md text-sm font-semibold transition cursor-pointer ${viewMode === 'deckBuilder' ? 'bg-indigo-600 text-white shadow' : 'text-slate-400 hover:text-white'
+              className={`px-4 py-2 rounded-md text-sm font-semibold transition cursor-pointer ${viewMode === 'deckBuilder' ? 'bg-red-700 text-white shadow' : 'text-slate-400 hover:text-white'
                 }`}
             >
               Deck Builder
             </button>
             <button
               onClick={() => setViewMode('creator')}
-              className={`px-4 py-2 rounded-md text-sm font-semibold transition cursor-pointer ${viewMode === 'creator' ? 'bg-emerald-600 text-white shadow' : 'text-slate-400 hover:text-white'
+              className={`px-4 py-2 rounded-md text-sm font-semibold transition cursor-pointer ${viewMode === 'creator' ? 'bg-red-700 text-white shadow' : 'text-slate-400 hover:text-white'
                 }`}
             >
               Card Creator

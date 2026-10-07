@@ -1,7 +1,7 @@
 import { useState, useMemo } from 'react';
 import { CardModal } from './CardModal';
 import { CardFilter } from './CardFilter';
-import { mockCards } from '../data/mockCards';
+import { allCards } from '../data/cardDatabase';
 import type { Card } from '../types/cardSchema';
 
 export const CardGallery = () => {
@@ -13,7 +13,7 @@ export const CardGallery = () => {
 
     // Search, filter and sort cards
     const filteredCards = useMemo(() => {
-        let result = mockCards;
+        let result = allCards;
 
         // 1. Search
         if (searchTerm) {

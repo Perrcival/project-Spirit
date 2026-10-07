@@ -71,8 +71,8 @@ export const CardCreator = () => {
 
         // Auto-update imageUrl when ID changes
         if (name === 'id') {
-            const currentColor = (newCardData.colors && newCardData.colors.length > 0) ? newCardData.colors[0].toLowerCase() : 'red';
-            newCardData.imageUrl = `/cards/${currentColor}/${value}.webp`;
+            const prefix = value.split('-')[0].replace(/\d+$/, '');
+            newCardData.imageUrl = `/cards/${prefix}/${value}.webp`;
         }
 
         setCardData(newCardData);
@@ -176,8 +176,7 @@ export const CardCreator = () => {
                                     const newColor = e.target.value as any;
                                     setCardData({
                                         ...cardData,
-                                        colors: [newColor],
-                                        imageUrl: `/cards/${newColor.toLowerCase()}/${cardData.id}.webp`
+                                        colors: [newColor]
                                     } as Card);
                                 }}
                                 className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white cursor-pointer"
@@ -541,7 +540,7 @@ export const CardCreator = () => {
                             name="imageUrl"
                             value={cardData.imageUrl || ''}
                             onChange={handleChange}
-                            placeholder="/cards/26RSD01-001.png"
+                            placeholder="/cards/26RSD/26RSD01-001.webp"
                             className="w-full p-2 bg-slate-700 rounded border border-slate-600 outline-none text-white focus:border-amber-400"
                         />
                     </div>
@@ -549,7 +548,7 @@ export const CardCreator = () => {
                     {/* JSON Output box */}
                     <div className="mt-8">
                         <div className="flex justify-between items-center mb-2">
-                            <h3 className="font-bold text-emerald-400">JSON Output</h3>
+                            <h3 className="font-bold text-emerald-400">JSON Output (Paste into sets/*.ts)</h3>
                             <button
                                 type="button"
                                 onClick={() => navigator.clipboard.writeText(jsCode)}

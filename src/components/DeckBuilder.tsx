@@ -1,5 +1,5 @@
 import { useState, useMemo, useEffect } from 'react';
-import { mockCards } from '../data/mockCards';
+import { allCards } from '../data/cardDatabase';
 import type { Card } from '../types/cardSchema';
 import { CardModal } from './CardModal';
 import { CardFilter } from './CardFilter';
@@ -28,7 +28,7 @@ export const DeckBuilder = () => {
 
     // Filter library cards
     const filteredLibrary = useMemo(() => {
-        let result = mockCards;
+        let result = allCards;
         if (searchTerm) {
             const lower = searchTerm.toLowerCase();
             result = result.filter(c => c.name.toLowerCase().includes(lower) || c.id.toLowerCase().includes(lower));
@@ -127,7 +127,7 @@ export const DeckBuilder = () => {
             setDeckName(targetDeck.name);
             const newDeck: DeckEntry[] = [];
             targetDeck.cards.forEach(item => {
-                const card = mockCards.find(c => c.id === item.id);
+                const card = allCards.find(c => c.id === item.id);
                 if (card) newDeck.push({ card, count: item.count });
             });
             setDeck(newDeck);

@@ -1,6 +1,6 @@
-import type { Card } from '../types/cardSchema';
+import type { Card } from '../../types/cardSchema';
 
-export const mockCards: Card[] = [
+export const set26RSD: Card[] = [
     // 26RSD01 Spirit Card
     {
         id: '26RSD01-001',
@@ -24,7 +24,7 @@ export const mockCards: Card[] = [
         effects: [
             '[LV2] <During Attack> : At the end of battle, if your Hand is five or less, draw a card.'
         ],
-        imageUrl: '/cards/red/26RSD01-001.webp' // รูปจำลองชั่วคราว
+        imageUrl: '/cards/26RSD/26RSD01-001.webp' // รูปจำลองชั่วคราว
     },
 
     {
@@ -49,7 +49,7 @@ export const mockCards: Card[] = [
         effects: [
             '[LV2] <True Release> During Attack : This Spirit gains +2000 BP.'
         ],
-        imageUrl: '/cards/red/26RSD01-002.webp'
+        imageUrl: '/cards/26RSD/26RSD01-002.webp'
 
     },
 
@@ -75,7 +75,7 @@ export const mockCards: Card[] = [
         effects: [
             '[LV1-2] <When Summoned> : If you control any exhausted Red Spirit, target an opposing 3000 BP or less Spirit. Destroy it.'
         ],
-        imageUrl: '/cards/red/26RSD01-003.webp'
+        imageUrl: '/cards/26RSD/26RSD01-003.webp'
     },
 
     {
@@ -100,7 +100,7 @@ export const mockCards: Card[] = [
         effects: [
             '[LV2] <When Attacks> : Reveal two cards from your decktop. Among them, add a "Windfang" family card to the Hand. Discard any remaining cards.'
         ],
-        imageUrl: '/cards/red/26RSD01-004.webp'
+        imageUrl: '/cards/26RSD/26RSD01-004.webp'
     },
 
     {
@@ -123,7 +123,7 @@ export const mockCards: Card[] = [
             { level: 2, coreCost: 3, bp: 8000 }
         ],
         effects: [],
-        imageUrl: '/cards/red/26RSD01-005.webp'
+        imageUrl: '/cards/26RSD/26RSD01-005.webp'
     },
 
     {
@@ -149,7 +149,7 @@ export const mockCards: Card[] = [
             '[LV1-2] <When Summoned> : Send up to two cores, besides Soul core, from your Trash to this Spirit.',
             '[LV2] <Your End Step> : You can target one of your "Windfang" family Spirit/Nexuses. Send the Soul core from your Tash to it.'
         ],
-        imageUrl: '/cards/red/26RSD01-006.webp'
+        imageUrl: '/cards/26RSD/26RSD01-006.webp'
     },
 
     {
@@ -175,7 +175,7 @@ export const mockCards: Card[] = [
             '[LV1-2] <During Attack> <Invoke:Flash> <Once Per Turn>: Discard a "Windfang" family card from your Hand. During this battle, this Spirit gains +3000 BP.',
             '[LV2] <True Release> <When Attacks> : Target an opposing 3000 BP or less Spirit. Destroy it.'
         ],
-        imageUrl: '/cards/red/26RSD01-007.webp'
+        imageUrl: '/cards/26RSD/26RSD01-007.webp'
     },
 
     {
@@ -202,7 +202,7 @@ export const mockCards: Card[] = [
             'You can banish EX Symbols from your Trash for reductions.',
             '[LV1-2] <When Summoned> : You can target a "Windfang" family Spirit card, besieds "Sertarius", in your Trash. Return it to the Hand.'
         ],
-        imageUrl: '/cards/red/26RSD01-008.webp'
+        imageUrl: '/cards/26RSD/26RSD01-008.webp'
     },
 
     {
@@ -228,7 +228,7 @@ export const mockCards: Card[] = [
             '[LV1-2] <When Summoned> : If you control any exhausted "Windfang" family Spirit, target an opposing 5000 BP or less Spirit. Destroy it.',
             '[LV2] <True Release> <During Attack> :'
         ],
-        imageUrl: '/cards/red/26RSD01-009.webp'
+        imageUrl: '/cards/26RSD/26RSD01-009.webp'
     },
 
     {
@@ -253,7 +253,7 @@ export const mockCards: Card[] = [
             '[LV1-LV2] <Your Attack Step> <Invoke:Flash> : Exhaust this Nexus => Target one of your attacking "Windfang" family Spirits. During this battle, it gains +2000 BP.',
             '[LV2] <True Release> <Your Attack Step> <Once Per Turn> : When you destroy any opposing Spirits, you can target one of your Spirits. Send a core, besides Soul Core, from your Trash to it.'
         ],
-        imageUrl: '/cards/red/26RSD01-010.webp'
+        imageUrl: '/cards/26RSD/26RSD01-010.webp'
     },
 
     {
@@ -278,7 +278,7 @@ export const mockCards: Card[] = [
             '[LV1-LV2] <When Deployed> : If you control any exhausted Red Spirit, target a Cost 4 or less "Windfang" family Spirit card in your Trash. Return it to the Hand.',
             '[LV2] <Your Attack Step> : All your Spirits with Legacy gain +2000 BP.'
         ],
-        imageUrl: '/cards/red/26RSD01-011.webp'
+        imageUrl: '/cards/26RSD/26RSD01-011.webp'
     },
 
     {
@@ -301,7 +301,7 @@ export const mockCards: Card[] = [
             '[Main] : Target an opposing Nexus that isn\'t during True Release. Destroy it. Then, if you control any exhausted Red Spirit, send a core, besides Soul Core, from your Trash to the Reserve.',
             '[Flash] : Target one of your Spirits. During this turn, give it +3000 BP.'
         ],
-        imageUrl: '/cards/red/26RSD01-012.webp'
+        imageUrl: '/cards/26RSD/26RSD01-012.webp'
     },
 
     {
@@ -324,7 +324,7 @@ export const mockCards: Card[] = [
             '[Main] : Reveal three cards from your decktop. Among them, besides "Offering Draw", add two "Windfang" family cards to the Hand. Return any remaining cards to the deckbottom in any order.',
             '[Flash] : Target one of your Spirits. During this turn, give it +2000 BP.'
         ],
-        imageUrl: '/cards/red/26RSD01-013.webp'
+        imageUrl: '/cards/26RSD/26RSD01-013.webp'
     },
 
     {
@@ -348,7 +348,7 @@ export const mockCards: Card[] = [
             '[Soul Magic: Red] : If you control any Red symbol, you can use it with just the Soul Core.',
             '[Flash] : Target an opposing 7000 BP or less Spirit. Destroy it. If your Life was reduced during this turn, the targeting BP becomes 10000 instead.'
         ],
-        imageUrl: '/cards/red/26RSD01-014.webp'
+        imageUrl: '/cards/26RSD/26RSD01-014.webp'
     },
 
     {
@@ -375,7 +375,7 @@ export const mockCards: Card[] = [
             '[LV1-2] <When Summoned> : Target an opposing 7000 BP or less Spirit. Destroy it.',
             '[LV2] <When Attacks> : You can target a "Windfang" family Spirit you control. Put up to two cores, besides Soul Core, from your Trash to it.'
         ],
-        imageUrl: '/cards/red/26RSD01-X01.webp'
+        imageUrl: '/cards/26RSD/26RSD01-X01.webp'
     },
 
     {
@@ -401,7 +401,7 @@ export const mockCards: Card[] = [
             '[LV1-2] <During Attack> <Invoke: Flash> <Once Per Turn> : Discard a "Windfang" family card from your Hand => During this battle, this Spirit gains +3000 BP.',
             '[LV2] <True Release> <When Attacks> : Reveal three cards from your decktop. Among them, add a "Windfang" family card to the Hand. Discard any remaining cards.'
         ],
-        imageUrl: '/cards/red/26RSD01-X02.webp'
+        imageUrl: '/cards/26RSD/26RSD01-X02.webp'
     },
 
     {
@@ -447,7 +447,7 @@ export const mockCards: Card[] = [
                 description: "Target an opposing Spirit. Send a core, besides Soul Core, from it to the Reserve."
             }
         ],
-        imageUrl: "/cards/purple/26RSD02-001.webp",
+        imageUrl: "/cards/26RSD/26RSD02-001.webp",
         levels: [
             {
                 level: 1,
@@ -505,7 +505,7 @@ export const mockCards: Card[] = [
                 description: "Draw a card."
             }
         ],
-        imageUrl: "/cards/purple/26RSD02-002.webp",
+        imageUrl: "/cards/26RSD/26RSD02-002.webp",
         levels: [
             {
                 level: 1,
@@ -567,7 +567,7 @@ export const mockCards: Card[] = [
                 description: "This Spirit gains +3000 BP."
             }
         ],
-        imageUrl: "/cards/purple/26RSD02-003.webp",
+        imageUrl: "/cards/26RSD/26RSD02-003.webp",
         levels: [
             {
                 level: 1,
@@ -629,7 +629,7 @@ export const mockCards: Card[] = [
                 description: "Target an opposing Cost 4 or less Spirit. Send a core, besides Soul Core from it to the Reserve."
             }
         ],
-        imageUrl: "/cards/purple/26RSD02-004.webp",
+        imageUrl: "/cards/26RSD/26RSD02-004.webp",
         levels: [
             {
                 level: 1,
@@ -675,7 +675,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/purple/26RSD02-005.webp",
+        imageUrl: "/cards/26RSD/26RSD02-005.webp",
         levels: [
             {
                 level: 1,
@@ -734,7 +734,7 @@ export const mockCards: Card[] = [
                 description: "Draw a card."
             }
         ],
-        imageUrl: "/cards/purple/26RSD02-006.webp",
+        imageUrl: "/cards/26RSD/26RSD02-006.webp",
         levels: [
             {
                 level: 1,
@@ -808,7 +808,7 @@ export const mockCards: Card[] = [
                 description: "This Spirit gains +2000 BP."
             }
         ],
-        imageUrl: "/cards/purple/26RSD02-007.webp",
+        imageUrl: "/cards/26RSD/26RSD02-007.webp",
         levels: [
             {
                 level: 1,
@@ -866,7 +866,7 @@ export const mockCards: Card[] = [
                 description: "Target an opposing Spirit. Send a core, besides Soul Core, from it to the Reserve."
             }
         ],
-        imageUrl: "/cards/purple/26RSD02-008.webp",
+        imageUrl: "/cards/26RSD/26RSD02-008.webp",
         levels: [
             {
                 level: 1,
@@ -944,7 +944,7 @@ export const mockCards: Card[] = [
                 description: "When you're summoning any \"Bloodrouse\" family Spirit card, if any opposing Spirit is depleted this turn, this Nexus gains an extra Purple symbol."
             }
         ],
-        imageUrl: "/cards/purple/26RSD02-009.webp",
+        imageUrl: "/cards/26RSD/26RSD02-009.webp",
         levels: [
             {
                 level: 1,
@@ -1013,7 +1013,7 @@ export const mockCards: Card[] = [
                 description: "Destroy this Nexus ▶ Target an opposing Cost 3 or less Spirit. Send cores from it to the Reserve until one core remains. (The opponent chooses which cores to send.)"
             }
         ],
-        imageUrl: "/cards/purple/26RSD02-010.webp",
+        imageUrl: "/cards/26RSD/26RSD02-010.webp",
         levels: [
             {
                 level: 1,
@@ -1049,7 +1049,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/purple/26RSD02-011.webp",
+        imageUrl: "/cards/26RSD/26RSD02-011.webp",
         mainEffect: "Target one of your \"Bloodrouse\" family Spirits. Destroy it. If you've done so, put a core from the Void to your Reserve.",
         flashEffect: "Target one of your Spirits. During this turn, give it +2000 BP."
     },
@@ -1083,7 +1083,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/purple/26RSD02-012.webp",
+        imageUrl: "/cards/26RSD/26RSD02-012.webp",
         mainEffect: "",
         flashEffect: "Target an opposing Spirit. Send cores from it to the Reserve until one core remains. (The opponent choses which cores to send)"
     },
@@ -1111,7 +1111,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: true,
         effects: [],
-        imageUrl: "/cards/purple/26RSD02-013.webp",
+        imageUrl: "/cards/26RSD/26RSD02-013.webp",
         mainEffect: "",
         flashEffect: "Target one of your Spirits. During this turn, give it +2000 BP. Then, if your Life was reduced this turn, during this turn, your Life can't be reduced by the attacks of opposing Spirits with one core on them."
     },
@@ -1145,7 +1145,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/purple/26RSD02-014.webp",
+        imageUrl: "/cards/26RSD/26RSD02-014.webp",
         mainEffect: "",
         flashEffect: "Target an opposing Spirit. Send two cores from it to the Reserve. (The opponent chooses which cores to send)",
         soulMagicConditionColor: "Purple"
@@ -1206,7 +1206,7 @@ export const mockCards: Card[] = [
                 description: "Target an opposing Spirit. Send a core, besides Soul Core, from it to the Reserve. If it depletes, draw a card."
             }
         ],
-        imageUrl: "/cards/purple/26RSD02-X01.webp",
+        imageUrl: "/cards/26RSD/26RSD02-X01.webp",
         levels: [
             {
                 level: 1,
@@ -1280,7 +1280,7 @@ export const mockCards: Card[] = [
                 description: "If any opposing Spirit is depleted by your effects this turn, this Spirit can't be blocked by opposing Cost 4 or less Spirits."
             }
         ],
-        imageUrl: "/cards/purple/26RSD02-X02.webp",
+        imageUrl: "/cards/26RSD/26RSD02-X02.webp",
         levels: [
             {
                 level: 1,
@@ -1336,7 +1336,7 @@ export const mockCards: Card[] = [
                 description: "You can summon this card from the Hand using cores from the Reserve to pay for the summon cost and putting onto it."
             }
         ],
-        imageUrl: "/cards/green/26RSD03-001.webp",
+        imageUrl: "/cards/26RSD/26RSD03-001.webp",
         levels: [
             {
                 level: 1,
@@ -1394,7 +1394,7 @@ export const mockCards: Card[] = [
                 description: "Put a core from the Void to your Trash."
             }
         ],
-        imageUrl: "/cards/green/26RSD03-002.webp",
+        imageUrl: "/cards/26RSD/26RSD03-002.webp",
         levels: [
             {
                 level: 1,
@@ -1469,7 +1469,7 @@ export const mockCards: Card[] = [
                 description: "This Spirit gains +2000 BP."
             }
         ],
-        imageUrl: "/cards/green/26RSD03-003.webp",
+        imageUrl: "/cards/26RSD/26RSD03-003.webp",
         levels: [
             {
                 level: 1,
@@ -1515,7 +1515,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/green/26RSD03-004.webp",
+        imageUrl: "/cards/26RSD/26RSD03-004.webp",
         levels: [
             {
                 level: 1,
@@ -1560,7 +1560,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/green/26RSD03-005.webp",
+        imageUrl: "/cards/26RSD/26RSD03-005.webp",
         levels: [
             {
                 level: 1,
@@ -1618,7 +1618,7 @@ export const mockCards: Card[] = [
                 description: "Besides this Spirit, you can target an \"Armored Fish\" family Spirit you control. Put a core from the Void to it. Then, if you control any exhausted \"Armored Fish\" family Spirit, you can target one of your Spirits. Refresh it."
             }
         ],
-        imageUrl: "/cards/green/26RSD03-006.webp",
+        imageUrl: "/cards/26RSD/26RSD03-006.webp",
         levels: [
             {
                 level: 1,
@@ -1692,7 +1692,7 @@ export const mockCards: Card[] = [
                 description: "This Spirit gains +2000 BP."
             }
         ],
-        imageUrl: "/cards/green/26RSD03-007.webp",
+        imageUrl: "/cards/26RSD/26RSD03-007.webp",
         levels: [
             {
                 level: 1,
@@ -1763,7 +1763,7 @@ export const mockCards: Card[] = [
                 description: "You can target an opposing Cost 3 or less Spirit. Exhaust it."
             }
         ],
-        imageUrl: "/cards/green/26RSD03-008.webp",
+        imageUrl: "/cards/26RSD/26RSD03-008.webp",
         levels: [
             {
                 level: 1,
@@ -1833,7 +1833,7 @@ export const mockCards: Card[] = [
                 description: "You can target an opposing Spirit. Exhaust it."
             }
         ],
-        imageUrl: "/cards/green/26RSD03-009.webp",
+        imageUrl: "/cards/26RSD/26RSD03-009.webp",
         levels: [
             {
                 level: 1,
@@ -1911,7 +1911,7 @@ export const mockCards: Card[] = [
                 description: "Show a Cost 4 or less \"Armored Fish\" family card from your Hand to the opponent. Return it to the deckbottom ▶ Draw a card."
             }
         ],
-        imageUrl: "/cards/green/26RSD03-010.webp",
+        imageUrl: "/cards/26RSD/26RSD03-010.webp",
         levels: [
             {
                 level: 1,
@@ -1980,7 +1980,7 @@ export const mockCards: Card[] = [
                 description: "If you control two or more exhausted \"Armored Fish\" family Spirits, put a core from the Void to your Reserve."
             }
         ],
-        imageUrl: "/cards/green/26RSD03-011.webp",
+        imageUrl: "/cards/26RSD/26RSD03-011.webp",
         levels: [
             {
                 level: 1,
@@ -2016,7 +2016,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/green/26RSD03-012.webp",
+        imageUrl: "/cards/26RSD/26RSD03-012.webp",
         mainEffect: "Return all your Hand to the deckbottom in any order. When one or more card is returned, draw a card for each card in the opposing Hand",
         flashEffect: "Target one of your Spirits. During this turn, give it +2000 BP"
     },
@@ -2050,7 +2050,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/green/26RSD03-013.webp",
+        imageUrl: "/cards/26RSD/26RSD03-013.webp",
         mainEffect: "",
         flashEffect: "Target an opposing Spirit. Exhaust it."
     },
@@ -2084,7 +2084,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/green/26RSD03-014.webp",
+        imageUrl: "/cards/26RSD/26RSD03-014.webp",
         mainEffect: "",
         flashEffect: "Target an opposing Spirit. Heavy exhaust it.",
         soulMagicConditionColor: "Green"
@@ -2149,7 +2149,7 @@ export const mockCards: Card[] = [
                 description: "At the end of battle, this Spirit can refresh."
             }
         ],
-        imageUrl: "/cards/green/26RSD03-X01.webp",
+        imageUrl: "/cards/26RSD/26RSD03-X01.webp",
         levels: [
             {
                 level: 1,
@@ -2231,7 +2231,7 @@ export const mockCards: Card[] = [
                 description: "Besides this Spirit, target an \"Armored Fish\" family Spirit you control. Refresh it."
             }
         ],
-        imageUrl: "/cards/green/26RSD03-X02.webp",
+        imageUrl: "/cards/26RSD/26RSD03-X02.webp",
         levels: [
             {
                 level: 1,
@@ -2293,7 +2293,7 @@ export const mockCards: Card[] = [
                 description: "Target an \"Mineroid\" family Nexus you control. Put a core from the Void to it."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-001.webp",
+        imageUrl: "/cards/26RSD/26RSD04-001.webp",
         levels: [
             {
                 level: 1,
@@ -2364,7 +2364,7 @@ export const mockCards: Card[] = [
                 description: "If you have three or more White symbols, this Spirit gains +5000 BP."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-002.webp",
+        imageUrl: "/cards/26RSD/26RSD04-002.webp",
         levels: [
             {
                 level: 1,
@@ -2422,7 +2422,7 @@ export const mockCards: Card[] = [
                 description: "Exhaust this Spirit ▶ Reveal two cards from your decktop. Among them, add a Cost 6 or more \"Mineroid\" family Spirit card to the Hand. Return any remaining cards to the deckbottom in any order."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-003.webp",
+        imageUrl: "/cards/26RSD/26RSD04-003.webp",
         levels: [
             {
                 level: 1,
@@ -2492,7 +2492,7 @@ export const mockCards: Card[] = [
                 description: "When you're summoning any Cost 6 or more \"Mineroid\" family Spirit card, this Spirit gains an extra White symbol."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-004.webp",
+        imageUrl: "/cards/26RSD/26RSD04-004.webp",
         levels: [
             {
                 level: 1,
@@ -2537,7 +2537,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/white/26RSD04-005.webp",
+        imageUrl: "/cards/26RSD/26RSD04-005.webp",
         levels: [
             {
                 level: 1,
@@ -2607,7 +2607,7 @@ export const mockCards: Card[] = [
                 description: "This Spirit gains +2000 BP."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-006.webp",
+        imageUrl: "/cards/26RSD/26RSD04-006.webp",
         levels: [
             {
                 level: 1,
@@ -2682,7 +2682,7 @@ export const mockCards: Card[] = [
                 description: "Target an opposing 4000 BP or less Spirit. Return it to the Hand."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-007.webp",
+        imageUrl: "/cards/26RSD/26RSD04-007.webp",
         levels: [
             {
                 level: 1,
@@ -2742,7 +2742,7 @@ export const mockCards: Card[] = [
                 description: "Target an opposing 6000 BP or less Spirit. Return it to the Hand."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-008.webp",
+        imageUrl: "/cards/26RSD/26RSD04-008.webp",
         levels: [
             {
                 level: 1,
@@ -2812,7 +2812,7 @@ export const mockCards: Card[] = [
                 description: "You can target one of your \"Mineroid\" family Spirits. Refresh it."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-009.webp",
+        imageUrl: "/cards/26RSD/26RSD04-009.webp",
         levels: [
             {
                 level: 1,
@@ -2884,7 +2884,7 @@ export const mockCards: Card[] = [
                 description: "When only the opposing Spirit is destroyed by comparing BP with your Cost 6 or more \"Mineroid\" family Spirits, target one of your Spirits. Put a core from the Void to it."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-010.webp",
+        imageUrl: "/cards/26RSD/26RSD04-010.webp",
         levels: [
             {
                 level: 1,
@@ -2957,7 +2957,7 @@ export const mockCards: Card[] = [
                 description: "Exhaust this Nexus ▶ Target an opposing attacking 3000 BP or less Spirit. Return it to the Hand."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-011.webp",
+        imageUrl: "/cards/26RSD/26RSD04-011.webp",
         levels: [
             {
                 level: 1,
@@ -2993,7 +2993,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: true,
         effects: [],
-        imageUrl: "/cards/white/26RSD04-012.webp",
+        imageUrl: "/cards/26RSD/26RSD04-012.webp",
         mainEffect: "Show up to three \"Mineroid\" family cards from your Hand to the opponent. Return them to the deckbottom in any order. For each card returned, draw a card.",
         flashEffect: "Target one of your Spirits. During this turn, give it +3000 BP."
     },
@@ -3027,7 +3027,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/white/26RSD04-013.webp",
+        imageUrl: "/cards/26RSD/26RSD04-013.webp",
         mainEffect: "",
         flashEffect: "Target an opposing 5000 BP or less Spirit. Return it to the Hand."
     },
@@ -3061,7 +3061,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/white/26RSD04-014.webp",
+        imageUrl: "/cards/26RSD/26RSD04-014.webp",
         mainEffect: "",
         flashEffect: "Target an opposing Spirit. During this turn, your Life can't be reduced by its attack. If your Life was reduced during this turn, change to target two instead.",
         soulMagicConditionColor: "White"
@@ -3126,7 +3126,7 @@ export const mockCards: Card[] = [
                 description: "This Spirit can't be blocked by opposing Cost 7 or less Spirits."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-X01.webp",
+        imageUrl: "/cards/26RSD/26RSD04-X01.webp",
         levels: [
             {
                 level: 1,
@@ -3185,7 +3185,7 @@ export const mockCards: Card[] = [
                 description: "Target an opposing Spirit. Return it to the Hand. If you control any exhausted \"Mineroid\" family Spirit, you can return it to the deckbottom instead."
             }
         ],
-        imageUrl: "/cards/white/26RSD04-X02.webp",
+        imageUrl: "/cards/26RSD/26RSD04-X02.webp",
         levels: [
             {
                 level: 1,
@@ -3243,7 +3243,7 @@ export const mockCards: Card[] = [
                 description: "You can target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-001.webp",
+        imageUrl: "/cards/26RSD/26RSD05-001.webp",
         levels: [
             {
                 level: 1,
@@ -3301,7 +3301,7 @@ export const mockCards: Card[] = [
                 description: "You can reveal three cards from your decktop. Among them, add a \"Thunder Dragon\" family Magic card to the Hand. Return any remaining cards to the deckbottom in any order."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-002.webp",
+        imageUrl: "/cards/26RSD/26RSD05-002.webp",
         levels: [
             {
                 level: 1,
@@ -3360,7 +3360,7 @@ export const mockCards: Card[] = [
                 description: "You can target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-003.webp",
+        imageUrl: "/cards/26RSD/26RSD05-003.webp",
         levels: [
             {
                 level: 1,
@@ -3421,7 +3421,7 @@ export const mockCards: Card[] = [
                 description: "Target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-004.webp",
+        imageUrl: "/cards/26RSD/26RSD05-004.webp",
         levels: [
             {
                 level: 1,
@@ -3466,7 +3466,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/yellow/26RSD05-005.webp",
+        imageUrl: "/cards/26RSD/26RSD05-005.webp",
         levels: [
             {
                 level: 1,
@@ -3545,7 +3545,7 @@ export const mockCards: Card[] = [
                 description: "When you use a \"Thunder Dragon\" family Magic card, draw a card."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-006.webp",
+        imageUrl: "/cards/26RSD/26RSD05-006.webp",
         levels: [
             {
                 level: 1,
@@ -3604,7 +3604,7 @@ export const mockCards: Card[] = [
                 description: "You can reveal three cards from your decktop. Among them, add a \"Thunder Dragon\" family card, besides any \"The SearchingThunder Pelborg\", to the Hand. Return any remaining cards to the deckbottom."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-007.webp",
+        imageUrl: "/cards/26RSD/26RSD05-007.webp",
         levels: [
             {
                 level: 1,
@@ -3678,7 +3678,7 @@ export const mockCards: Card[] = [
                 description: "You can target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-008.webp",
+        imageUrl: "/cards/26RSD/26RSD05-008.webp",
         levels: [
             {
                 level: 1,
@@ -3753,7 +3753,7 @@ export const mockCards: Card[] = [
                 description: "If you control any exhausted \"Thunder Dragon\" family Spirit, you can target an opposing Spirit. During this turn, give it -2000 BP. Then, if it has 0 BP, destroy it."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-009.webp",
+        imageUrl: "/cards/26RSD/26RSD05-009.webp",
         levels: [
             {
                 level: 1,
@@ -3829,7 +3829,7 @@ export const mockCards: Card[] = [
                 description: "When you destroy any opposing 0 BP Spirit via your Spirit effects, draw a card."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-010.webp",
+        imageUrl: "/cards/26RSD/26RSD05-010.webp",
         levels: [
             {
                 level: 1,
@@ -3866,7 +3866,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/yellow/26RSD05-011.webp",
+        imageUrl: "/cards/26RSD/26RSD05-011.webp",
         mainEffect: "Draw a card.",
         flashEffect: "Target an opposing Spirit. During this turn, give it -2000 BP. Then, destroy it if it has 0 BP."
     },
@@ -3900,7 +3900,7 @@ export const mockCards: Card[] = [
                 description: "When your \"Thunder Dragon\" family Spirits are destroyed, you can return this card from the Trash to your Hand. You can only use this effect of the same card name once per turn."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-012.webp",
+        imageUrl: "/cards/26RSD/26RSD05-012.webp",
         mainEffect: "",
         flashEffect: "Target an opposing Spirit. During this turn, give it -2000 BP. Then, destroy it if it has 0 BP."
     },
@@ -3934,7 +3934,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: true,
         effects: [],
-        imageUrl: "/cards/yellow/26RSD05-013.webp",
+        imageUrl: "/cards/26RSD/26RSD05-013.webp",
         mainEffect: "Show up to two \"Thunder Dragon\" family cards from your Hand to the opponent. Return them to the deckbottom in any order. If two cards are returned, draw three cards.",
         flashEffect: "Target one of your Spirits. During this turn, give it +3000 BP."
     },
@@ -3968,7 +3968,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/yellow/26RSD05-014.webp",
+        imageUrl: "/cards/26RSD/26RSD05-014.webp",
         mainEffect: "",
         flashEffect: "Target an opposing Spirit. During this turn, give it -2000 BP. Then, destroy it if it's 0 BP. These happen three times.",
         soulMagicConditionColor: "Yellow"
@@ -4029,7 +4029,7 @@ export const mockCards: Card[] = [
                 description: "During this turn, give every opposing Spirit -2000 BP. Then, if they have 0 BP, destroy them."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-X01.webp",
+        imageUrl: "/cards/26RSD/26RSD05-X01.webp",
         levels: [
             {
                 level: 1,
@@ -4103,7 +4103,7 @@ export const mockCards: Card[] = [
                 description: "Target an opposing Spirit. During this turn, give it -4000 BP. Then, if it has 0 BP, destroy it."
             }
         ],
-        imageUrl: "/cards/yellow/26RSD05-X02.webp",
+        imageUrl: "/cards/26RSD/26RSD05-X02.webp",
         levels: [
             {
                 level: 1,
@@ -4162,7 +4162,7 @@ export const mockCards: Card[] = [
                 description: "Target a Nexus you control. Put a core from the Void to it."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-001.webp",
+        imageUrl: "/cards/26RSD/26RSD06-001.webp",
         levels: [
             {
                 level: 1,
@@ -4220,7 +4220,7 @@ export const mockCards: Card[] = [
                 description: "You can reveal three cards from your decktop. Among them, add a \"Ferobeast\" family Nexus card to the Hand. Return any remaining cards to the deckbottom in any order."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-002.webp",
+        imageUrl: "/cards/26RSD/26RSD06-002.webp",
         levels: [
             {
                 level: 1,
@@ -4281,7 +4281,7 @@ export const mockCards: Card[] = [
                 description: "Target an opposing Cost 3 or less Spirit. Destroy it."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-003.webp",
+        imageUrl: "/cards/26RSD/26RSD06-003.webp",
         levels: [
             {
                 level: 1,
@@ -4369,7 +4369,7 @@ export const mockCards: Card[] = [
                 description: "Exhaust one of your \"Ferobeast\" family Nexuses ▶ Put a core from the Void to your Trash."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-004.webp",
+        imageUrl: "/cards/26RSD/26RSD06-004.webp",
         levels: [
             {
                 level: 1,
@@ -4414,7 +4414,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/blue/26RSD06-005.webp",
+        imageUrl: "/cards/26RSD/26RSD06-005.webp",
         levels: [
             {
                 level: 1,
@@ -4472,7 +4472,7 @@ export const mockCards: Card[] = [
                 description: "Draw two cards, then return two cards from your Hand to the deckbottom in any order."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-006.webp",
+        imageUrl: "/cards/26RSD/26RSD06-006.webp",
         levels: [
             {
                 level: 1,
@@ -4542,7 +4542,7 @@ export const mockCards: Card[] = [
                 description: "Exhaust one of your \"Ferobeast\" family Nexuses ▶ During this battle, this Spirit gains +3000 BP."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-007.webp",
+        imageUrl: "/cards/26RSD/26RSD06-007.webp",
         levels: [
             {
                 level: 1,
@@ -4601,7 +4601,7 @@ export const mockCards: Card[] = [
                 description: "For each Nexus you control, during this turn, this Spirit gains +1000 BP."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-008.webp",
+        imageUrl: "/cards/26RSD/26RSD06-008.webp",
         levels: [
             {
                 level: 1,
@@ -4675,7 +4675,7 @@ export const mockCards: Card[] = [
                 description: "For every two Nexuses you control, you can target one \"Ferobeast\" family Spirit you control. Refresh them."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-009.webp",
+        imageUrl: "/cards/26RSD/26RSD06-009.webp",
         levels: [
             {
                 level: 1,
@@ -4747,7 +4747,7 @@ export const mockCards: Card[] = [
                 description: "When an opposing Spirit attacks, you can target one of your \"Ferobeast\" family Spirits with the same cost as that Spirit. Refresh it."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-010.webp",
+        imageUrl: "/cards/26RSD/26RSD06-010.webp",
         levels: [
             {
                 level: 1,
@@ -4820,7 +4820,7 @@ export const mockCards: Card[] = [
                 description: "When an opposing LV1 Spirit would attack, unless the opponent pay one cost, it can't attack."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-011.webp",
+        imageUrl: "/cards/26RSD/26RSD06-011.webp",
         levels: [
             {
                 level: 1,
@@ -4856,7 +4856,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/blue/26RSD06-012.webp",
+        imageUrl: "/cards/26RSD/26RSD06-012.webp",
         mainEffect: "Draw three cards, then return two cards from your Hand to the deckbottom in any order.",
         flashEffect: "Target one of your Spirits. During this turn, give it +3000 BP."
     },
@@ -4890,7 +4890,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: false,
         effects: [],
-        imageUrl: "/cards/blue/26RSD06-013.webp",
+        imageUrl: "/cards/26RSD/26RSD06-013.webp",
         mainEffect: "",
         flashEffect: "Target an opposing Cost 4 or below Spirit. Destroy it. When choosing the target, you can target one of your Nexuses. Destroy it. For each cost of the Nexus destroyed, the target cost increases by +1 instead.",
         soulMagicConditionColor: "Blue"
@@ -4925,7 +4925,7 @@ export const mockCards: Card[] = [
         ],
         hasLegacy: true,
         effects: [],
-        imageUrl: "/cards/blue/26RSD06-014.webp",
+        imageUrl: "/cards/26RSD/26RSD06-014.webp",
         mainEffect: "Target a Nexus you or the opponent controls that isn't during True Release. Destroy it. If you've done so, draw a card.",
         flashEffect: "Target one of your Spirits. During this turn, give it +3000 BP.",
         soulMagicConditionColor: "Blue"
@@ -4990,7 +4990,7 @@ export const mockCards: Card[] = [
                 description: "When the opponent would block, unless they exhaust a Spirit they control other than the blocking Spirit, they can't block."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-X01.webp",
+        imageUrl: "/cards/26RSD/26RSD06-X01.webp",
         levels: [
             {
                 level: 1,
@@ -5069,7 +5069,7 @@ export const mockCards: Card[] = [
                 description: "When this Spirit's attack would reduce the opposing Life, reduce +1 core."
             }
         ],
-        imageUrl: "/cards/blue/26RSD06-X02.webp",
+        imageUrl: "/cards/26RSD/26RSD06-X02.webp",
         levels: [
             {
                 level: 1,
@@ -5085,3 +5085,4 @@ export const mockCards: Card[] = [
     }
 
 ];
+
