@@ -1,11 +1,12 @@
 import { useState } from 'react';
 import { CardCreator } from './components/CardCreator';
 import { CardGallery } from './components/CardGallery';
+import { DeckBuilder } from './components/DeckBuilder';
 
 
 function App() {
-  // State for switching between Gallery and Creator (default is gallery)
-  const [viewMode, setViewMode] = useState<'gallery' | 'creator'>('gallery');
+  // State for switching views
+  const [viewMode, setViewMode] = useState<'gallery' | 'creator' | 'deckBuilder'>('gallery');
 
   return (
     <div className="min-h-screen bg-slate-900 font-sans text-slate-200">
@@ -29,6 +30,13 @@ function App() {
               Card Gallery
             </button>
             <button
+              onClick={() => setViewMode('deckBuilder')}
+              className={`px-4 py-2 rounded-md text-sm font-semibold transition cursor-pointer ${viewMode === 'deckBuilder' ? 'bg-indigo-600 text-white shadow' : 'text-slate-400 hover:text-white'
+                }`}
+            >
+              Deck Builder
+            </button>
+            <button
               onClick={() => setViewMode('creator')}
               className={`px-4 py-2 rounded-md text-sm font-semibold transition cursor-pointer ${viewMode === 'creator' ? 'bg-emerald-600 text-white shadow' : 'text-slate-400 hover:text-white'
                 }`}
@@ -45,6 +53,9 @@ function App() {
         {viewMode === 'creator' ? (
           // Card Creator Mode
           <CardCreator />
+        ) : viewMode === 'deckBuilder' ? (
+          // Deck Builder Mode
+          <DeckBuilder />
         ) : (
           // Card Gallery Mode
           <CardGallery />
